@@ -1,33 +1,238 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BearShield</title>
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet"></head>
+    <link rel="stylesheet" href="../assets/css/personnalisation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https//fonts.googleapis.com">
+    <link rel="preconnect" href="https//fonts.gstatic.com" crossorigin>
+    <link href="https//fonts.googleapis.com/css2?family=Lexend+Decawght@100..900&display=swap" rel="stylesheet">
+</head>
+
+
 <body class="p-4">
-    <header class="flex bg-primary-d2 justify-beetween br w-fit-content">
-        <a href="./index.html" class="flex pl-4"><img class="logo" src="../assets/img/logo.jpeg" alt="BearShield">
-        <h1 class="">BearShield</h1></a>
-        <nav class="h-100">
-            <ul class="flex h-100">
-                <li ><a class="p-4 flex" href="./coques.html">Nos Coques</a></li>
-                <li ><a class="p-4 flex" href="./accessoires.html">Nos Accessoires</a></li>
-                <li class="bg-primary br-right"><a class="p-4 flex" href="./personnalisation.html">Créé ta propre coque</a></li>
-            </ul>
-        </nav>
-    </header>
+
     <main>
-        <section>
-            <h2>À propos de nous</h2>
-            <p>BearShield est une entreprise dédiée à la protection de l'environnement.</p>
-        </section>
+        <div class="w-100 flex">
+            <img src="../assets/img/photo-phone.jpeg" alt="Phone Photo" class="img-produit">
+        </div>
+        <div class="w-100">
+
+        <h1 class="mt-4">Personnalise ta coque</h2>
+        <form id="customization-form" action="#" method="post" class="flex flex-col gap-4 align-start p-2">
+            <div class="w-100 flex flex-col align-start">
+                <label for="phone-model">Choisi ton téléphone</label>
+                <div class="select-container">
+                    <select id="phone-model" name="phone-model" required>
+                        <option value="">Sélectionner un modèle</option>
+                        <option value="iphone-14">iPhone 14</option>
+                        <option value="samsung-s22">Samsung Galaxy S22</option>
+                        <option value="google-pixel-7">Google Pixel 7</option>
+                    </select>
+                    <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+            </div>
+            <div class="w-100">
+                <label for="color">Couleur de la coque</label>
+                <div class="color-selector">
+                    <label class="color-option">
+                        <input type="radio" name="color" value="transparent" required>
+                        <div class="color-circle color-transparent"></div>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="color" value="noir" required>
+                        <div class="color-circle color-noir"></div>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="color" value="blanc" required>
+                        <div class="color-circle color-primary"></div>
+                    </label>
+
+                    <label class="color-option">
+                        <input type="radio" name="color" value="orange" required>
+                        <div class="color-circle color-bordeaux"></div>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="color" value="bleu" required>
+                        <div class="color-circle color-secondary"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="w-100">
+                <label for="finish">Finition </label>
+                <div class="toggle-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="finish" name="finish" value="brillant">
+                        <span class="toggle-slider">
+                            <span class="toggle-text-left">Mat</span>
+                            <span class="toggle-text-right">Brillant</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="w-100">
+                <label for="material">Matière de la coque </label>
+                <div class="toggle-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="material" name="material" value="souple">
+                        <span class="toggle-slider">
+                            <span class="toggle-text-left">Rigide</span>
+                            <span class="toggle-text-right">Souple</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="w-100">
+                <label for="corner-type">Type de coins </label>
+                <div class="toggle-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="corner-type" name="corner-type" value="renforcés">
+                        <span class="toggle-slider">
+                            <span class="toggle-text-left">Standard</span>
+                            <span class="toggle-text-right">Renforcés</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="w-100">
+                <label for="button-type">Type de boutons </label>
+                <div class="toggle-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="button-type" name="button-type" value="renforcés">
+                        <span class="toggle-slider">
+                            <span class="toggle-text-left">Standard</span>
+                            <span class="toggle-text-right">Renforcés</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="w-100">
+                <label for="accessories">Accessoires supplémentaires</label>
+                <div class="accessories-container">
+                    <div class="accessory-row">
+                        <input type="checkbox" id="protege-ecran" name="accessories" value="protege-ecran"
+                            class="accessory-checkbox">
+                        <button type="button" class="accessory-button" data-accessory="protege-ecran">
+                            <div class="accessory-content">
+                                <p>Accessoire 1</p>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="accessory-row">
+                        <input type="checkbox" id="protege-ecran" name="accessories" value="protege-ecran"
+                            class="accessory-checkbox">
+                        <button type="button" class="accessory-button" data-accessory="protege-ecran">
+                            <div class="accessory-content">
+                                <p>Accessoire 2</p>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="accessory-row">
+                        <input type="checkbox" id="protege-ecran" name="accessories" value="protege-ecran"
+                            class="accessory-checkbox">
+                        <button type="button" class="accessory-button" data-accessory="protege-ecran">
+                            <div class="accessory-content">
+                                <p>Accessoire 3</p>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="accessory-row">
+                        <input type="checkbox" id="protege-ecran" name="accessories" value="protege-ecran"
+                            class="accessory-checkbox">
+                        <button type="button" class="accessory-button" data-accessory="protege-ecran">
+                            <div class="accessory-content">
+                                <p>Accessoire 4</p>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+        </form>
+        </div>
     </main>
+    
+    <!-- Barre de prix fixe en bas -->
+    <div class="price-bar">
+        <div class="price-info">
+            <p class="price-label">Prix total</p>
+            <p class="price-amount" id="total-price">29,99€</p>
+        </div>
+        <button type="submit" form="customization-form" class="add-to-cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            Ajouter au panier
+        </button>
+    </div>
+    
     <footer>
-        <p>&copy; 2023 BearShield. Tous droits réservés.</p>
     </footer>
+
+    <script>
+        // Gestion du calcul de prix dynamique
+        document.addEventListener('DOMContentLoaded', function() {
+            const basePrice = 19.99;
+            const accessories = {
+                'protege-ecran': 9.99,
+                'support-voiture': 14.99,
+                'chargeur-rapide': 24.99,
+                'ecouteurs': 39.99
+            };
+            
+            const finishUpgrade = 5.00; // Prix supplémentaire pour finition brillante
+            const reinforcedUpgrade = 3.00; // Prix pour coins/boutons renforcés
+            
+            function calculatePrice() {
+                let total = basePrice;
+                
+                // Vérifier la finition
+                const finish = document.getElementById('finish');
+                if (finish && finish.checked) {
+                    total += finishUpgrade;
+                }
+                
+                // Vérifier les renforts
+                const cornerType = document.getElementById('corner-type');
+                const buttonType = document.getElementById('button-type');
+                if (cornerType && cornerType.checked) {
+                    total += reinforcedUpgrade;
+                }
+                if (buttonType && buttonType.checked) {
+                    total += reinforcedUpgrade;
+                }
+                
+                // Vérifier les accessoires
+                const accessoryCheckboxes = document.querySelectorAll('input[name="accessories"]:checked');
+                accessoryCheckboxes.forEach(checkbox => {
+                    if (accessories[checkbox.value]) {
+                        total += accessories[checkbox.value];
+                    }
+                });
+                
+                // Mettre à jour l'affichage
+                const priceDisplay = document.getElementById('total-price');
+                if (priceDisplay) {
+                    priceDisplay.textContent = total.toFixed(2) + '€';
+                }
+            }
+            
+            // Écouter les changements sur tous les éléments de formulaire
+            const formElements = document.querySelectorAll('#customization-form input, #customization-form select');
+            formElements.forEach(element => {
+                element.addEventListener('change', calculatePrice);
+            });
+            
+            // Calcul initial
+            calculatePrice();
+        });
+    </script>
+
 </body>
+
 </html>

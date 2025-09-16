@@ -19,6 +19,11 @@ font-family: "Lexend Deca", sans-serif;
   font-weight: 800;
   font-style: normal;
 }
+
+h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
 li{
     list-style: none;
 }
@@ -48,6 +53,13 @@ a{
     flex-direction: column ;
 }
 
+.justify-left{
+    justify-content: left;
+}
+
+.align-start{
+    align-items: start;
+}
 .bg-primary{
     background-color: var(--primary-color);
     color: #000;
@@ -288,4 +300,136 @@ button.lined{
 }
 .h-fit-content{
     height: fit-content;
+}
+
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.t-0{
+    top: 0;
+}
+.l-0{
+    left: 0;
+}
+.b-0{
+    bottom: 0;
+}
+.r-0{
+    right: 0;
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 4rem;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 3.2rem;
+    width: 50%;
+    left: 0.4rem;
+    top: 0.4rem;
+    background-color: white;
+    border-radius: 11px;
+    transition: 0.4s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(calc(100% - 0.8rem));
+}
+
+.toggle-text-left {
+    position: relative;
+    z-index: 2;
+    color: var(--secondary-color);
+    transition: 0.4s;
+}
+
+.toggle-text-right {
+    position: relative;
+    z-index: 2;
+    color: #999;
+    transition: 0.4s;
+}
+
+.toggle-switch input:checked + .toggle-slider .toggle-text-left {
+    color: #999;
+}
+
+.toggle-switch input:checked + .toggle-slider .toggle-text-right {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.toggle-label {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    min-width: 80px;
+}
+
+@media (min-width: 900px) {
+    .toggle-slider {
+        font-size: 0.8rem;
+        padding: 0 1rem;
+        height: 3rem;
+    }
+
+    .toggle-slider:before {
+        height: 2.3rem;
+        left: 0.35rem;
+        top: 0.35rem;
+    }
+    .toggle-label {
+        font-size: 0.8rem;
+        min-width: 60px;
+    }
 }
