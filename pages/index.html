@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BearShield</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/accueil.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet"></head>
-<body class="p-4">
-    <header class="flex bg-primary-d2 justify-beetween br w-fit-content">
+<body class="p-4 mt-5">
+    <header class="flex bg-primary-d2 justify-beetween br">
         <a href="./index.html" class="flex pl-4"><img class="logo" src="../assets/img/logo.jpeg" alt="BearShield">
         <h1 class="">BearShield</h1></a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
+        <label for="menu-toggle" class="menu-mobile">
+            <i class="fa-solid fa-bars"></i>
+        </label>
         <nav class="h-100">
-            <ul class="flex h-100">
-                <li ><a class="p-4 flex" href="./coques.html">Nos Coques</a></li>
-                <li ><a class="p-4 flex" href="./accessoires.html">Nos Accessoires</a></li>
-                <li class="bg-primary br-right"><a class="p-4 flex" href="./personnalisation.html">Créé ta propre coque</a></li>
+            <ul class="flex h-100 menu-list">
+                <li><a class="p-4 flex" href="./coques.html">Nos Coques</a></li>
+                <li><a class="p-4 flex" href="./accessoires.html">Nos Accessoires</a></li>
+                <li class="bg-primary br-sm-right"><a class="p-4 flex" href="./personnalisation.html">Créé ta propre coque</a></li>
             </ul>
         </nav>
     </header>

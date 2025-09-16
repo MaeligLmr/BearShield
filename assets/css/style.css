@@ -13,6 +13,11 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
+
+main {
+    padding-top: 5rem;
+}
+
 h1,h2,h3{
 font-family: "Lexend Deca", sans-serif;
   font-optical-sizing: auto;
@@ -30,11 +35,6 @@ a{
 
 .br{
     border-radius: 15px;
-}
-
-.br-right{
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
 }
 
 .flex{
@@ -214,6 +214,12 @@ a{
 .text-center{
     text-align: center;
 }
+.justify-beetween{
+    justify-content: space-between;
+}
+.justify-center{
+    justify-content: center;
+}
 .grid{
     display: grid;
     gap: 1rem;
@@ -243,6 +249,10 @@ button.light{
 button.lined{
     background: none;
     border: 2px solid var(--primary-color);
+}
+
+.br-sm-right{
+    border-radius: 15px;
 }
 
 .w-50{
@@ -288,4 +298,83 @@ button.lined{
 }
 .h-fit-content{
     height: fit-content;
+}
+
+header {
+    max-width: 100%;
+    width: 95%;
+    margin: 0;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.menu-mobile {
+    cursor: pointer;
+    z-index: 11;
+    display: block;
+    position: absolute;
+    right: 2rem;
+}
+
+nav .menu-list {
+    display: none;
+    flex-direction: column;
+    background: var(--primary-color);
+}
+
+nav .menu-list {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: fixed;
+    top: 2.5rem;
+    left: 0;
+    width: 100vw;
+    height: 85vh;
+    z-index: 100;
+    box-shadow: none;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.menu-toggle:checked ~ nav .menu-list {
+    display: flex;
+}
+
+
+@media (min-width: 576px) {
+    header {
+            max-width: 80%;
+            margin: auto;
+    }
+
+    .menu-toggle,
+    .menu-mobile {
+            display: none;
+    }
+
+    nav .menu-list {
+            all: unset;
+            display: flex;
+        }
+    nav .menu-list {
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        box-shadow: none;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .br-sm-right{
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
 }
