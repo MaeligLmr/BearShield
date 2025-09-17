@@ -1,0 +1,45 @@
+function createAccessoryCard(product) {
+    return `
+        <div class="card">
+            <img src="${product.image}" alt="${product.name}" class="img-card mb-2">
+            <div class="w-100 flex flex-col align-start">
+                <div class="w-100 flex justify-between">
+                    <p class="">${product.name}</p>
+                    <span><strong>${product.price.toFixed(2)}€</strong></span>
+                </div>
+                <div class="flex flex-col gap-1 w-100">
+                    <button class="lined w-100" data-product-id="${product.id}">Voir le produit</button>
+                    <button class="orange w-100">Ajouter au panier</button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function loadAccessories() {
+    fetch('../data/products.json')
+        .then(res => res.json())
+        .then(products => {
+            const grips = products.filter(product => product.type === 'grip');
+            const container = document.getElementById('accessories-container');
+            
+            if (container) {
+                container.innerHTML = grips.map(createAccessoryCard).join('');
+                
+                // Ajouter les événements de navigation
+                const viewProductButtons = container.querySelectorAll('button.lined.w-100');
+                viewProductButtons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const productId = btn.getAttribute('data-product-id');
+                        window.location.href = `./produit.html?id=${productId}`;
+                    });
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Erreur lors du chargement des accessoires:', error);
+        });
+}
+
+document.addEventListener('DOMContentLoaded', loadAccessories);
