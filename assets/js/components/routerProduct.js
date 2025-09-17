@@ -39,7 +39,8 @@ function loadProducts(search="") {
                      container.style.gridTemplateColumns = "1fr";
                 } else {
                     container.innerHTML = coques.map(createProductCard).join('');
-                
+                                    container.style.gridTemplateColumns = "";
+
                     const viewProductButtons = container.querySelectorAll('button.lined.w-100');
                     viewProductButtons.forEach(btn => {
                         btn.addEventListener('click', (e) => {
