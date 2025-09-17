@@ -8,31 +8,15 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/lists.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="../assets/js/components.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="flex bg-primary-d2 justify-between mt-4 br">
-        <a href="./index.html" class="flex pl-4"><img class="logo" src="../assets/img/logo.jpeg" alt="BearShield">
-        <h1 class="">BearShield</h1></a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
-        <label for="menu-toggle" class="menu-mobile">
-            <i class="fa-solid fa-bars"></i>
-        </label>
-        <nav class="h-100">
-            <ul class="flex h-100 menu-list">
-                <li><a class="p-4 flex" href="./cases.html">Nos Coques</a></li>
-                <li><a class="p-4 flex" href="./accessories.html">Nos Accessoires</a></li>
-                <li class="bg-primary br-sm-right"><a class="p-4 flex" href="./personnalization.html">Créé ta propre coque</a></li>
-                <li class="bg-secondary br-sm-right link-cart"><a href="./cart.html" class="p-4 flex">Panier</a></li>
-            </ul>
-        </nav>
-    </header>
-    <a href="./cart.html" class="container-cart">
-        <i class="fa-solid fa-cart-shopping"></i>
-    </a>
+    
+    <div data-component="header"></div>
 
     <main class="flex flex-col p-4 pt-5rem">
         <h1 class="mt-4">Nos Coques</h1>
@@ -48,22 +32,7 @@
             </div>
         </section>
     </main>
-    <footer class="w-100 bg-secondary flex">
-        <div class="p-4 flex justify-center flex-col">
-            <a href="#">A propos de nous</a>
-            <a href="#">FAQ</a>
-            <a href="#">Politique de confidentialité</a>
-            <a href="#">Conditions d'utilisation</a>
-            <a href="#">Mentions légales</a>
-            <a href="#">Nous rejoindre</a>
-        </div>
-        <div class="p-4 flex justify-center">
-            <a href="#"><i class="white fa-brands fa-facebook fa-2x p-2"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram fa-2x p-2"></i></a>
-            <a href="#"><i class="fa-solid fa-share-nodes fa-2x p-2"></i></a>
-        </div>
-
-    </footer>
+    <div data-component="footer"></div>
 <script src="../assets/js/components/routerProduct.js"></script>
 </body>
 

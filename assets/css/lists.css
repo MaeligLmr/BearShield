@@ -20,6 +20,9 @@ button.button-search:hover{
     transform: none;
 }
 
+main {
+    min-height: 80vh;
+}
 .card{
     width : 100%;
     border: 1px solid #e0e0e0;
@@ -29,6 +32,7 @@ button.button-search:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     max-height: 70vh;
     gap : 1rem;
 }

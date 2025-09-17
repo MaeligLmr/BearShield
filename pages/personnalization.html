@@ -11,29 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https//fonts.googleapis.com">
     <link rel="preconnect" href="https//fonts.gstatic.com" crossorigin>
+    <script src="../assets/js/components.js"></script>
     <link href="https//fonts.googleapis.com/css2?family=Lexend+Decawght@100..900&display=swap" rel="stylesheet">
 </head>
 
 
 <body>
-    <header class="flex bg-primary-d2 justify-between mt-4 br">
-        <a href="./index.html" class="flex pl-4"><img class="logo" src="../assets/img/logo.jpeg" alt="BearShield">
-            <h1 class="">BearShield</h1>
-        </a>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
-        <label for="menu-toggle" class="menu-mobile">
-            <i class="fa-solid fa-bars"></i>
-        </label>
-        <nav class="h-100">
-            <ul class="flex h-100 menu-list">
-                <li><a class="p-4 flex" href="./cases.html">Nos Coques</a></li>
-                <li><a class="p-4 flex" href="./accessories.html">Nos Accessoires</a></li>
-                <li class="bg-primary br-sm-right"><a class="p-4 flex" href="./personnalization.html">Créé ta propre
-                        coque</a></li>
-                <li class="bg-secondary br-sm-right link-cart"><a href="./cart.html" class="p-4 flex">Panier</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div data-component="header"></div>
     <a href="./cart.html" class="container-cart">
         <i class="fa-solid fa-cart-shopping"></i>
     </a>
