@@ -154,7 +154,7 @@
         }
 
         function updatePreviewAccessories() {
-            const previewContainer = document.getElementById('preview-accessories');
+            const previewContainer = document.querySelector('#preview-accessories');
             const checkedAccessories = document.querySelectorAll('.accessory-checkbox:checked');
             
             if (!previewContainer) return;
@@ -183,7 +183,7 @@
                 .then(products => {
                     const grips = products.filter(product => product.type === 'grip');
                     gripsData = grips;
-                    const container = document.getElementById('accessories-container');
+                    const container = document.querySelector('#accessories-container');
                     
                     if (container) {
                         container.innerHTML = grips.map(createAccessoryRow).join('');

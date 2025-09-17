@@ -27,7 +27,7 @@ function loadProducts(search="") {
                     product.description.toLowerCase().includes(search.toLowerCase())
                 );
             }
-            const container = document.getElementById('products-container');
+            const container = document.querySelector('#products-container');
            
             if (container) {
                 if (coques.length === 0 && search !== "") {

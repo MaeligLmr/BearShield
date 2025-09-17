@@ -27,7 +27,7 @@ function loadAccessories(search="") {
                     product.description.toLowerCase().includes(search.toLowerCase())
                 );
             }
-            const container = document.getElementById('accessories-container');
+            const container = document.querySelector('#accessories-container');
             
             if (container) {
                 if (grips.length === 0 && search !== "") {
