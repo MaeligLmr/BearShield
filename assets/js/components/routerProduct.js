@@ -31,23 +31,24 @@ function loadProducts(search="") {
            
             if (container) {
                 if (coques.length === 0 && search !== "") {
-                    container.parentElement.innerHTML = `
-                        <div class="w-100 text-center p-4 h-s-75">
+                    container.innerHTML = `
+                        <div class="w-100 text-center p-4">
                             <p>Aucune coque trouvée pour "${search}"</p>
                         </div>
                     `;
+                     container.style.gridTemplateColumns = "1fr";
                 } else {
-                container.innerHTML = coques.map(createProductCard).join('');
+                    container.innerHTML = coques.map(createProductCard).join('');
                 
-                const viewProductButtons = container.querySelectorAll('button.lined.w-100');
-                viewProductButtons.forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const productId = btn.getAttribute('data-product-id');
-                        window.location.href = `./product.html?id=${productId}`;
+                    const viewProductButtons = container.querySelectorAll('button.lined.w-100');
+                    viewProductButtons.forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const productId = btn.getAttribute('data-product-id');
+                            window.location.href = `./product.html?id=${productId}`;
+                        });
                     });
-                });
-            }
+                }
             }
         })
         .catch(error => {
@@ -79,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Événement sur la saisie
     if (searchInput) {
-        
+    
         // Recherche avec la touche Entrée
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {

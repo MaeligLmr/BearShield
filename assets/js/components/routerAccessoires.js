@@ -31,11 +31,12 @@ function loadAccessories(search="") {
             
             if (container) {
                 if (grips.length === 0 && search !== "") {
-                    container.parentElement.innerHTML = `
+                    container.innerHTML = `
                         <div class="w-100 text-center p-4 h-s-75">
                             <p>Aucun accessoire trouvé pour "${search}"</p>
                         </div>
                     `;
+                    container.style.gridTemplateColumns = "1fr";
                 } else {
                     container.innerHTML = grips.map(createAccessoryCard).join('');
                     
