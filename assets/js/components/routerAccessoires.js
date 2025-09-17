@@ -26,13 +26,12 @@ function loadAccessories() {
             if (container) {
                 container.innerHTML = grips.map(createAccessoryCard).join('');
                 
-                // Ajouter les événements de navigation
                 const viewProductButtons = container.querySelectorAll('button.lined.w-100');
                 viewProductButtons.forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         e.preventDefault();
                         const productId = btn.getAttribute('data-product-id');
-                        window.location.href = `./produit.html?id=${productId}`;
+                        window.location.href = `./product.html?id=${productId}`;
                     });
                 });
             }
