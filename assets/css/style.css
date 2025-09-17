@@ -417,6 +417,7 @@ button.bleu:hover {
 .logo{
     height: 2rem;
     width: 2rem;
+    border-radius: 15px;
 }
 
 button.light{
@@ -479,6 +480,8 @@ button.lined:hover{
 .h-s-100{
     height: 100vh;
 }
+
+
 
 .w-fit-content{
     width: fit-content;
