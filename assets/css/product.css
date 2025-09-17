@@ -3,3 +3,8 @@
     max-width: 500px;
     height: auto;
 }
+
+#product-image {
+    position: revert;
+    transform: none;
+}
