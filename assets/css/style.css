@@ -293,6 +293,9 @@ a{
     top: 1rem;
     right: 2rem;
     z-index: 100;
+    border-radius: 50%;
+    background-color: var(--primary-color-d2);
+    padding: 1rem;
 }
 .container-cart .fa-cart-shopping {
     font-size: 1.5rem;
@@ -450,7 +453,9 @@ footer>div{
 
 }
 
-
+.link-cart {
+    display: flex;
+}
 
 .menu-mobile {
     cursor: pointer;
@@ -458,10 +463,6 @@ footer>div{
     display: block;
     position: absolute;
     right: 2rem;
-}
-
-.link-cart {
-    display: flex;
 }
 
 nav .menu-list {
@@ -612,6 +613,10 @@ nav .menu-list {
         margin: auto;
     }
 
+    .container-cart {
+        display: flex;
+    }
+
     .menu-toggle,
     .menu-mobile {
         display: none;
@@ -657,5 +662,9 @@ nav .menu-list {
     .toggle-label {
         font-size: 0.8rem;
         min-width: 60px;
+    }
+
+    .link-cart {
+        display: none;
     }
 }
