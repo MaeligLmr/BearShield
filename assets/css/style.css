@@ -223,8 +223,39 @@ a{
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
 .pt-5rem{
     padding-top: 5rem;
+
+.p-t-0{
+    padding-top : 0;
+}
+.p-t-1{
+    padding-top: 0.25rem;
+}
+.p-t-2{
+    padding-top: 0.5rem;
+}
+.p-t-3{
+    padding-top: 0.75rem;
+}
+.p-t-4{
+    padding-top: 1rem;
+}
+.p-t-5{
+    padding-top: 1.25rem;
+}
+.p-t-6{
+    padding-top: 1.5rem;
+}
+.p-t-7{
+    padding-top: 1.75rem;
+}
+.p-t-8{
+    padding-top: 2rem;
+}
+.p-t-max{
+    padding-top: 6rem;
 }
 
 .m-0{
@@ -471,6 +502,11 @@ header {
     left: 50%;
     z-index: 100;
     transform: translateX(-50%);
+    padding : 1rem;
+}
+
+.fa-solid{
+    font-size : xx-large;
 }
 
 footer{
@@ -500,7 +536,7 @@ nav .menu-list {
     flex-direction: column;
     background: var(--primary-color-d2);
     position: fixed;
-    top: 3rem;
+    top: 5rem;
     border-radius: 15px;
     left: 50%;
     transform: translateX(-50%);
@@ -641,6 +677,7 @@ nav .menu-list {
     header {
         max-width: 80%;
         margin: auto;
+        padding:0;
     }
 
     .container-cart {

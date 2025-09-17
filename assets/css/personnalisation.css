@@ -272,7 +272,7 @@ select option:first-child {
 
 /* Espace pour éviter que le contenu soit caché par la barre fixe */
 main {
-    padding-bottom: 120px;
+    margin-bottom: 6rem;
     display: flex;
     flex-direction: column;
     align-items: start;
