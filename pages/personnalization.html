@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BearShield</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="stylesheet" href="../assets/css/personnalization.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https//fonts.googleapis.com">
@@ -39,13 +40,13 @@
 
     <main class="p-4 p-t-max relative">
         <div class="w-100 flex">
-            <img src="../assets/img/photo-phone.jpeg" alt="Phone Photo" class="img-produit">
+            <img src="../assets/img/product/photo-phone.jpeg" alt="Phone Photo" class="img-produit">
         </div>
         <div class="w-100">
-            <h1 class="mt-4">Personnalise ta coque</h2>
+            <h1 class="mt-4 text-orange">Personnalise ta coque</h2>
                 <form id="customization-form" action="#" method="post" class="flex flex-col gap-4 align-start p-2">
                     <div class="w-100 flex flex-col align-start">
-                        <label for="phone-model">Choisi ton téléphone</label>
+                        <label for="phone-model" class="font-bold text-bleu">Choisi ton téléphone</label>
                         <div class="select-container">
                             <select id="phone-model" name="phone-model" required>
                                 <option value="">Sélectionner un modèle</option>
@@ -57,7 +58,7 @@
                         </div>
                     </div>
                     <div class="w-100">
-                        <label for="color">Couleur de la coque</label>
+                        <label for="color" class="font-bold text-bleu">Couleur de la coque</label>
                         <div class="color-selector">
                             <label class="color-option">
                                 <input type="radio" name="color" value="transparent" required>
@@ -83,7 +84,7 @@
                         </div>
                     </div>
                     <div class="w-100">
-                        <label for="finish">Finition </label>
+                        <label for="finish" class="font-bold text-bleu">Finition </label>
                         <div class="toggle-container">
                             <label class="toggle-switch">
                                 <input type="checkbox" id="finish" name="finish" value="brillant">
@@ -95,7 +96,7 @@
                         </div>
                     </div>
                     <div class="w-100">
-                        <label for="material">Matière de la coque </label>
+                        <label for="material" class="font-bold text-bleu">Matière de la coque </label>
                         <div class="toggle-container">
                             <label class="toggle-switch">
                                 <input type="checkbox" id="material" name="material" value="souple">
@@ -107,7 +108,7 @@
                         </div>
                     </div>
                     <div class="w-100">
-                        <label for="corner-type">Type de coins </label>
+                        <label for="corner-type" class="font-bold text-bleu">Type de coins </label>
                         <div class="toggle-container">
                             <label class="toggle-switch">
                                 <input type="checkbox" id="corner-type" name="corner-type" value="renforcés">
@@ -119,7 +120,7 @@
                         </div>
                     </div>
                     <div class="w-100">
-                        <label for="button-type">Type de boutons </label>
+                        <label for="button-type" class="font-bold text-bleu">Type de boutons </label>
                         <div class="toggle-container">
                             <label class="toggle-switch">
                                 <input type="checkbox" id="button-type" name="button-type" value="renforcés">
@@ -132,50 +133,12 @@
                     </div>
 
                     <div class="w-100">
-                        <label for="accessories">Accessoires supplémentaires</label>
-                        <div class="accessories-container">
-                            <div class="accessory-row">
-                                <input type="checkbox" id="protege-ecran" name="accessories" value="protege-ecran"
-                                    class="accessory-checkbox">
-                                <button type="button" class="accessory-button" data-accessory="protege-ecran">
-                                    <div class="accessory-content">
-                                        <p>Accessoire 1</p>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="accessory-row">
-                                <input type="checkbox" id="protege-ecran" name="accessories" value="protege-ecran"
-                                    class="accessory-checkbox">
-                                <button type="button" class="accessory-button" data-accessory="protege-ecran">
-                                    <div class="accessory-content">
-                                        <p>Accessoire 2</p>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="accessory-row">
-                                <input type="checkbox" id="protege-ecran" name="accessories" value="protege-ecran"
-                                    class="accessory-checkbox">
-                                <button type="button" class="accessory-button" data-accessory="protege-ecran">
-                                    <div class="accessory-content">
-                                        <p>Accessoire 3</p>
-                                    </div>
-                                </button>
-                            </div>
-                            <div class="accessory-row">
-                                <input type="checkbox" id="protege-ecran" name="accessories" value="protege-ecran"
-                                    class="accessory-checkbox">
-                                <button type="button" class="accessory-button" data-accessory="protege-ecran">
-                                    <div class="accessory-content">
-                                        <p>Accessoire 4</p>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
+                        <label for="accessories" class="font-bold text-bleu">Accessoires supplémentaires</label>
+                        <div class="accessories-container" id="accessories-container"></div>
+                        <div class="products-grid products-grid-personnalization" id="preview-accessories"></div>
                     </div>
-
-
-        </div>
-        </form>
+                </div>
+            </form>
         </div>
         <div class="price-bar">
             <div class="price-info">
@@ -189,6 +152,78 @@
         </div>
     </main>        
 
+    <script>
+        let gripsData = [];
+
+        function createAccessoryRow(grip) {
+            return `
+                <div class="accessory-row">
+                    <input type="checkbox" id="grip-${grip.id}" name="accessories" value="grip-${grip.id}" class="accessory-checkbox">
+                    <button type="button" class="accessory-button" data-accessory="grip-${grip.id}" data-grip-id="${grip.id}">
+                        <div class="accessory-content">
+                            <p>${grip.name}</p>
+                            <span class="accessory-price">+${grip.price.toFixed(2)}€</span>
+                        </div>
+                    </button>
+                </div>
+            `;
+        }
+
+        function updatePreviewAccessories() {
+            const previewContainer = document.getElementById('preview-accessories');
+            const checkedAccessories = document.querySelectorAll('.accessory-checkbox:checked');
+            
+            if (!previewContainer) return;
+
+            previewContainer.innerHTML = '';
+
+            checkedAccessories.forEach(checkbox => {
+                const gripId = parseInt(checkbox.value.replace('grip-', ''));
+                const grip = gripsData.find(g => g.id === gripId);
+                
+                if (grip) {
+                    const previewItem = document.createElement('div');
+                    previewItem.className = 'preview-item';
+                    previewItem.innerHTML = `
+                        <img src="${grip.image}" alt="${grip.name}" class="preview-accessory-image">
+                        <p class="preview-accessory-name">${grip.name}</p>
+                    `;
+                    previewContainer.appendChild(previewItem);
+                }
+            });
+        }
+
+        function loadAccessoriesForCustomization() {
+            fetch('../data/products.json')
+                .then(res => res.json())
+                .then(products => {
+                    const grips = products.filter(product => product.type === 'grip');
+                    gripsData = grips;
+                    const container = document.getElementById('accessories-container');
+                    
+                    if (container) {
+                        container.innerHTML = grips.map(createAccessoryRow).join('');
+                        
+                        const accessoryButtons = container.querySelectorAll('.accessory-button');
+                        accessoryButtons.forEach(btn => {
+                            btn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                const checkbox = btn.parentElement.querySelector('.accessory-checkbox');
+                                checkbox.checked = !checkbox.checked;
+                                btn.classList.toggle('selected', checkbox.checked);
+                                
+                                updatePreviewAccessories();
+                            });
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement des accessoires:', error);
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadAccessoriesForCustomization);
+    </script>
 </body>
 
 </html>

@@ -11,7 +11,6 @@
     height: auto;
 }
 
-/* Color selector styles */
 .color-selector {
     display: flex;
     gap: 1rem;
@@ -47,7 +46,6 @@
     border-color: var(--primary-color);
 }
 
-/* Couleurs spécifiques */
 .color-noir {
     background-color: #000000;
 }
@@ -76,8 +74,7 @@
     background-color: var(--secondary-color);
 }
 
-/* Custom Phone Select Styles */
-select-container {
+.select-container {
     position: relative;
     display: inline-block;
     width: 100%;
@@ -124,7 +121,6 @@ select option:first-child {
 }
 
 
-/* Font Awesome dropdown arrow */
 .select-arrow {
     position: absolute;
     top: 50%;
@@ -152,7 +148,6 @@ select option:first-child {
     transform: translateY(-50%) rotate(180deg);
 }
 
-/* Accessories selection styles */
 .accessories-container {
     display: flex;
     flex-direction: column;
@@ -182,7 +177,6 @@ select option:first-child {
 }
 
 
-/* Nouvelle structure - Bouton et checkbox séparés */
 .accessory-row {
     display: flex;
     align-items: center;
@@ -234,7 +228,6 @@ select option:first-child {
     border-radius: 0 2px 2px 0;
 }
 
-/* Barre de prix fixe en bas */
 .price-bar {
     position: fixed;
     bottom: 0;
@@ -270,7 +263,6 @@ select option:first-child {
     margin: 0;
 }
 
-/* Espace pour éviter que le contenu soit caché par la barre fixe */
 main {
     margin-bottom: 6rem;
     display: flex;
@@ -295,4 +287,62 @@ form {
     form {
         width : 80%;
     }
+    .img-produit {
+        width: auto;
+        height: 70vh;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.accessory-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.accessory-price {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.accessory-button.selected {
+    background-color: var(--primary-color-d1);
+    border-color: var(--primary-color);
+}
+
+.preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color-d1);
+    border-radius: 8px;
+    width: 100%;
+}
+
+.products-grid-personnalization {
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.preview-accessory-image {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.preview-accessory-name {
+    font-size: 0.75rem;
+    text-align: center;
+    color: var(--secondary-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.accessory-button.selected .accessory-price {
+    color: var(--secondary-color);
 }
