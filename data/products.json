@@ -4,27 +4,95 @@
     "name": "Coque noire mat souple",
     "image": "../assets/img/product/black-case.png",
     "price": 19.99,
-    "description": "Une coque noire élégante, finition mate, souple et résistante. Protection optimale et design minimaliste."
+    "description": "Une coque noire élégante, finition mate, souple et résistante. Protection optimale et design minimaliste.",
+    "type": "coque"
   },
   {
     "id": 2,
     "name": "Coque champi verte",
     "image": "../assets/img/product/champi-case.png",
     "price": 21.99,
-    "description": "Coque verte avec motif champignon, souple et originale. Parfaite pour les amoureux de la nature."
+    "description": "Coque verte avec motif champignon, souple et originale. Parfaite pour les amoureux de la nature.",
+    "type": "coque"
   },
   {
     "id": 3,
     "name": "Coque transparente",
     "image": "../assets/img/product/clear-case.png",
     "price": 17.99,
-    "description": "Coque transparente qui protège sans cacher le design de votre téléphone. Fine et légère."
+    "description": "Coque transparente qui protège sans cacher le design de votre téléphone. Fine et légère.",
+    "type": "coque"
   },
   {
     "id": 4,
     "name": "Coque Japan",
     "image": "../assets/img/product/japan-case.png",
     "price": 22.99,
-    "description": "Coque inspirée du Japon, motifs traditionnels et couleurs vives. Un style unique pour votre mobile."
+    "description": "Coque inspirée du Japon, motifs traditionnels et couleurs vives. Un style unique pour votre mobile.",
+    "type": "coque"
+  },
+  {
+    "id": 5,
+    "name": "Coque noire élégante",
+    "image": "../assets/img/product/phone-black.svg",
+    "price": 18.99,
+    "description": "Coque noire avec design vectoriel moderne. Style épuré et protection efficace.",
+    "type": "coque"
+  },
+  {
+    "id": 6,
+    "name": "Coque photo personnalisée",
+    "image": "../assets/img/product/photo-phone.jpeg",
+    "price": 24.99,
+    "description": "Coque avec espace photo personnalisable. Parfaite pour afficher vos souvenirs préférés.",
+    "type": "coque"
+  },
+  {
+    "id": 7,
+    "name": "Grip Blob coloré",
+    "image": "../assets/img/accessoires/blob-grip.png",
+    "price": 14.99,
+    "description": "Grip coloré avec design blob moderne. Parfait pour une prise en main originale et confortable.",
+    "type": "grip"
+  },
+  {
+    "id": 8,
+    "name": "Grip motif chien",
+    "image": "../assets/img/accessoires/dog-grip.png",
+    "price": 16.99,
+    "description": "Grip adorable avec motif chien. Idéal pour les amoureux des animaux et un style mignon.",
+    "type": "grip"
+  },
+  {
+    "id": 9,
+    "name": "Grip fleur délicate",
+    "image": "../assets/img/accessoires/flower-grip.png",
+    "price": 15.99,
+    "description": "Grip élégant avec motif floral. Design raffiné pour un style féminin et naturel.",
+    "type": "grip"
+  },
+  {
+    "id": 10,
+    "name": "Grip pastèque fun",
+    "image": "../assets/img/accessoires/watermelon-grip.png",
+    "price": 13.99,
+    "description": "Grip amusant avec motif pastèque. Parfait pour un look estival et coloré.",
+    "type": "grip"
+  },
+  {
+    "id": 11,
+    "name": "Grip design moderne",
+    "image": "../assets/img/accessoires/grip2.png",
+    "price": 17.99,
+    "description": "Grip au design moderne et épuré. Idéal pour un style contemporain et une prise sûre.",
+    "type": "grip"
+  },
+  {
+    "id": 12,
+    "name": "Grip style urbain",
+    "image": "../assets/img/accessoires/grip3.png",
+    "price": 16.49,
+    "description": "Grip avec style urbain et moderne. Parfait pour un look tendance et pratique.",
+    "type": "grip"
   }
 ]
