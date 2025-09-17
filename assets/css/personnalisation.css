@@ -270,29 +270,6 @@ select option:first-child {
     margin: 0;
 }
 
-.add-to-cart-btn {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.add-to-cart-btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-}
-
-.add-to-cart-btn:active {
-    transform: translateY(0);
-}
-
 /* Espace pour éviter que le contenu soit caché par la barre fixe */
 main {
     padding-bottom: 120px;

@@ -6,16 +6,15 @@
     --secondary-color-d1: #205780;
 }
 
+body {
+    overflow-x: hidden;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
-}
-
-main {
-    padding-top: 5rem;
 }
 
 h1,h2,h3{
@@ -206,6 +205,15 @@ a{
 .m-4{
     margin: 1rem;
 }
+.mt-2{
+    margin-top: 0.5rem;
+}
+.mt-3{
+    margin-top: 0.75rem;
+}
+.mt-4{
+    margin-top: 1rem;
+}
 .m-5{
     margin: 1.25rem;
 }
@@ -226,11 +234,23 @@ a{
 .text-center{
     text-align: center;
 }
+.text-left{
+    text-align: left;
+}
 .justify-beetween{
     justify-content: space-between;
 }
 .justify-center{
     justify-content: center;
+}
+.align-start{
+    align-items: flex-start;
+}
+.align-center{
+    align-items: center;
+}
+.align-end{
+    align-items: flex-end;
 }
 .grid{
     display: grid;
@@ -243,24 +263,55 @@ button{
     outline: none;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
     transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    background-color: var(--primary-color);
-    color: #000;
-    border-radius: 5px;
+    white-space: nowrap;
 }
+
+button.orange,
+.add-to-cart-btn{
+    background-color: var(--primary-color);
+    color: var(--primary-color-d2);
+}
+
+button.orange:hover,
+.add-to-cart-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+button.bleu-clair {
+    background-color: var(--primary-color);
+    color: var(--primary-color-d2);
+}
+
+button.bleu-clair:hover {
+    background-color: var(--secondary-color-d1);
+    transform: translateY(-2px);
+}
+
+button.bleu{
+    background-color: var(--secondary-color);
+    color: var(--primary-color-d2);
+}
+
+button.bleu:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+    transform: translateY(0);
+}
+
 .logo{
     height: 2rem;
     width: 2rem;
-}
-
-button.light{
-    background: var(--primary-color-d1);
-}
-
-button.lined{
-    background: none;
-    border: 2px solid var(--primary-color);
 }
 
 .br-sm-right{
@@ -319,6 +370,7 @@ header {
     margin: 0;
     position: fixed;
     left: 50%;
+    z-index: 100;
     transform: translateX(-50%);
 }
 
@@ -502,8 +554,8 @@ nav .menu-list {
     }
 
     .br-sm-right{
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }
 
