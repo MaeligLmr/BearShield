@@ -16,24 +16,38 @@ function createAccessoryCard(product) {
     `;
 }
 
-function loadAccessories() {
+function loadAccessories(search="") {
     fetch('../data/products.json')
         .then(res => res.json())
         .then(products => {
-            const grips = products.filter(product => product.type === 'grip');
+            let grips = products.filter(product => product.type === 'grip');
+            if (search !== "") {
+                grips = grips.filter(product => 
+                    product.name.toLowerCase().includes(search.toLowerCase()) || 
+                    product.description.toLowerCase().includes(search.toLowerCase())
+                );
+            }
             const container = document.getElementById('accessories-container');
             
             if (container) {
-                container.innerHTML = grips.map(createAccessoryCard).join('');
-                
-                const viewProductButtons = container.querySelectorAll('button.lined.w-100');
-                viewProductButtons.forEach(btn => {
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const productId = btn.getAttribute('data-product-id');
-                        window.location.href = `./product.html?id=${productId}`;
+                if (grips.length === 0 && search !== "") {
+                    container.parentElement.innerHTML = `
+                        <div class="w-100 text-center p-4 h-s-75">
+                            <p>Aucun accessoire trouvé pour "${search}"</p>
+                        </div>
+                    `;
+                } else {
+                    container.innerHTML = grips.map(createAccessoryCard).join('');
+                    
+                    const viewProductButtons = container.querySelectorAll('button.lined.w-100');
+                    viewProductButtons.forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            const productId = btn.getAttribute('data-product-id');
+                            window.location.href = `./product.html?id=${productId}`;
+                        });
                     });
-                });
+                }
             }
         })
         .catch(error => {
@@ -41,4 +55,36 @@ function loadAccessories() {
         });
 }
 
-document.addEventListener('DOMContentLoaded', loadAccessories);
+document.addEventListener('DOMContentLoaded', () => {
+    loadAccessories();
+    
+    // Récupération des éléments de recherche
+    const searchInput = document.querySelector('.input-search');
+    const searchButton = document.querySelector('.button-search');
+    
+    // Fonction de recherche
+    function performSearch() {
+        const searchTerm = searchInput.value.trim();
+        loadAccessories(searchTerm);
+    }
+    
+    // Événement sur le bouton de recherche
+    if (searchButton) {
+        searchButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            performSearch();
+        });
+    }
+    
+    // Événement sur la saisie
+    if (searchInput) {
+        
+        // Recherche avec la touche Entrée
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                performSearch();
+            }
+        });
+    }
+});
