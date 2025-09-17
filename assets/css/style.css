@@ -351,6 +351,13 @@ strong{
     height: fit-content;
 }
 
+.w-max-content{
+    width: max-content;
+}
+.h-max-content{
+    height: max-content;
+}
+
 header {
     z-index : 100;
     max-width: 100%;
@@ -360,6 +367,18 @@ header {
     left: 50%;
     transform: translateX(-50%);
 }
+
+footer{
+    flex-direction: column;
+}
+
+footer>div{
+    width: 100%;
+    color: white;
+
+}
+
+
 
 .menu-mobile {
     cursor: pointer;
@@ -513,7 +532,7 @@ nav .menu-list {
 
 @media (min-width: 576px) {
     header {
-            max-width: 90%;
+            max-width: 80%;
             margin: auto;
     }
 
@@ -538,6 +557,14 @@ nav .menu-list {
         justify-content: center;
         align-items: center;
         gap: 1rem;
+    }
+
+    footer>div{
+        width: 49%;
+    }
+
+    footer{
+        flex-direction: row;
     }
 
     .br-sm-right{

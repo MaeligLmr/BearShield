@@ -38,8 +38,22 @@
     max-width: 100%;
 }
 
+.card-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
 @media (min-width: 768px) {
     .card{
-        width : 22%;
+        width: 100%;
+    }
+    .img-card{
+        height: 35vh;
+    }
+
+    .card-container{
+        grid-template-columns: repeat(4, 1fr);
     }
 }
