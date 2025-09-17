@@ -477,6 +477,11 @@ header {
     left: 50%;
     z-index: 100;
     transform: translateX(-50%);
+    padding : 1rem;
+}
+
+.fa-solid{
+    font-size : xx-large;
 }
 
 footer{
@@ -506,7 +511,7 @@ nav .menu-list {
     flex-direction: column;
     background: var(--primary-color-d2);
     position: fixed;
-    top: 3rem;
+    top: 5rem;
     border-radius: 15px;
     left: 50%;
     transform: translateX(-50%);
@@ -647,6 +652,7 @@ nav .menu-list {
     header {
         max-width: 80%;
         margin: auto;
+        padding:0;
     }
 
     .container-cart {
