@@ -368,6 +368,12 @@ button.lined{
     border: 2px solid var(--primary-color);
 }
 
+button.lined:hover{
+    background: var(--primary-color);
+    color: var(--primary-color-d2);
+    transform: translateY(-2px);
+}
+
 strong{
     color: var(--secondary-color);
 }
