@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Coque noire mat souple",
+    "image": "../assets/img/product/black-case.png",
+    "price": 19.99,
+    "description": "Une coque noire élégante, finition mate, souple et résistante. Protection optimale et design minimaliste."
+  },
+  {
+    "id": 2,
+    "name": "Coque champi verte",
+    "image": "../assets/img/product/champi-case.png",
+    "price": 21.99,
+    "description": "Coque verte avec motif champignon, souple et originale. Parfaite pour les amoureux de la nature."
+  },
+  {
+    "id": 3,
+    "name": "Coque transparente",
+    "image": "../assets/img/product/clear-case.png",
+    "price": 17.99,
+    "description": "Coque transparente qui protège sans cacher le design de votre téléphone. Fine et légère."
+  },
+  {
+    "id": 4,
+    "name": "Coque Japan",
+    "image": "../assets/img/product/japan-case.png",
+    "price": 22.99,
+    "description": "Coque inspirée du Japon, motifs traditionnels et couleurs vives. Un style unique pour votre mobile."
+  }
+]

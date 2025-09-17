@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BearShield</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/personnalisation.css">
+    <link rel="stylesheet" href="../assets/css/produit.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet"></head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+</head>
 <body>
     <header class="flex bg-primary-d2 justify-between mt-4 br">
         <a href="./index.html" class="flex pl-4"><img class="logo" src="../assets/img/logo.jpeg" alt="BearShield">
@@ -28,11 +32,64 @@
     <a href="./panier.html" class="container-cart">
         <i class="fa-solid fa-cart-shopping"></i>
     </a>
-    <main>
-        <section>
-            <h2>À propos de nous</h2>
-            <p>BearShield est une entreprise dédiée à la protection de l'environnement.</p>
-        </section>
+<main class="p-4 pt-5rem">
+        <div class="w-100 flex">
+            <img id="product-image" src="../assets/img/photo-phone.jpeg" alt="Phone Photo" class="img-produit">
+        </div>
+        <div class="w-100 mt-12">
+
+        <h1 id="product-name" class="mt-4 text-orange">Personnalise ta coque</h1>
+        
+        <div class="product-info mb-4">
+            <p id="product-description" class="text-bleu-clair mb-2"></p>
+            <p id="product-price" class="text-lg font-bold text-bleu"></p>
+        </div>
+        
+        <form id="customization-form" action="#" method="post" class="flex flex-col gap-4 align-start p-2">
+            <div class="w-100 flex flex-col align-start">
+                <label for="phone-model" class="font-bold text-bleu">Choisi ton téléphone</label>
+                <div class="select-container">
+                    <select id="phone-model" name="phone-model" required>
+                        <option value="">Sélectionner un modèle</option>
+                        <option value="iphone-14">iPhone 14</option>
+                        <option value="samsung-s22">Samsung Galaxy S22</option>
+                        <option value="google-pixel-7">Google Pixel 7</option>
+                    </select>
+                    <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+            </div>
+            <div class="w-100">
+                <label for="color" class="font-bold text-bleu">Couleur de la coque</label>
+                <div class="color-selector">
+                    <label class="color-option">
+                        <input type="radio" name="color" value="transparent" required>
+                        <div class="color-circle color-transparent"></div>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="color" value="noir" required>
+                        <div class="color-circle color-noir"></div>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="color" value="blanc" required>
+                        <div class="color-circle color-primary"></div>
+                    </label>
+
+                    <label class="color-option">
+                        <input type="radio" name="color" value="orange" required>
+                        <div class="color-circle color-bordeaux"></div>
+                    </label>
+                    <label class="color-option">
+                        <input type="radio" name="color" value="bleu" required>
+                        <div class="color-circle color-secondary"></div>
+                    </label>
+                </div>
+                <button type="button" id="add-to-cart-btn" class="btn btn-primary w-100 mt-4 p-3">
+                    <i class="fa-solid fa-cart-plus mr-2"></i>
+                    Ajouter au panier
+                </button>
+            </div>
+        </form>
+        </div>
     </main>
     <footer class="w-100 bg-secondary flex">
         <div class="p-4 flex justify-center flex-col">
@@ -50,5 +107,7 @@
         </div>
 
     </footer>
+
+    <script src="../assets/js/pages/product.js"></script>
 </body>
 </html>
