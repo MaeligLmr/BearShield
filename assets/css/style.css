@@ -42,6 +42,30 @@ a{
     border-radius: 15px;
 }
 
+.br-left{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.br-right{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.br-0{
+    border-radius: 0;
+}
+
+.br-left-0{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.br-right-0{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .flex{
     display: flex;
     justify-content: center;
@@ -49,6 +73,13 @@ a{
     gap : 1rem;
 }
 
+.gap-0{
+    gap : 0;
+}
+
+.gap-1{
+    gap : 0.25rem;
+}
 .flex-col{
     flex-direction: column ;
 }
@@ -226,7 +257,7 @@ a{
 .text-center{
     text-align: center;
 }
-.justify-beetween{
+.justify-between{
     justify-content: space-between;
 }
 .justify-center{
@@ -261,6 +292,14 @@ button.light{
 button.lined{
     background: none;
     border: 2px solid var(--primary-color);
+}
+
+strong{
+    color: var(--secondary-color);
+}
+
+.wrap{
+    flex-wrap: wrap;
 }
 
 .br-sm-right{
@@ -474,7 +513,7 @@ nav .menu-list {
 
 @media (min-width: 576px) {
     header {
-            max-width: 80%;
+            max-width: 90%;
             margin: auto;
     }
 
