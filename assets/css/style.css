@@ -611,7 +611,7 @@ nav .menu-list {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #e0e0e0;
+    background-color: var(--primary-color-d2);
     border-radius: 12px;
     transition: 0.4s;
     display: flex;
@@ -629,10 +629,9 @@ nav .menu-list {
     width: 50%;
     left: 0.4rem;
     top: 0.4rem;
-    background-color: white;
+    background-color: var(--secondary-color-d1);
     border-radius: 11px;
     transition: 0.4s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 
@@ -643,28 +642,28 @@ nav .menu-list {
 .toggle-text-left {
     position: relative;
     z-index: 2;
-    color: var(--secondary-color);
+    color: var(--primary-color-d2);
     transition: 0.4s;
+    font-weight: 600;
 }
 
 .toggle-text-right {
     position: relative;
     z-index: 2;
-    color: #999;
-    transition: 0.4s;
-}
-
-.toggle-switch input:checked + .toggle-slider .toggle-text-left {
-    color: #999;
-}
-
-.toggle-switch input:checked + .toggle-slider .toggle-text-right {
     color: var(--secondary-color);
+    transition: 0.4s;
     font-weight: 600;
 }
 
+.toggle-switch input:checked + .toggle-slider .toggle-text-left {
+    color: var(--secondary-color);
+}
+
+.toggle-switch input:checked + .toggle-slider .toggle-text-right {
+    color: var(--primary-color-d2);
+}
+
 .toggle-label {
-    font-size: 0.9rem;
     color: var(--secondary-color);
     min-width: 80px;
 }
