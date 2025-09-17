@@ -45,6 +45,30 @@ a{
     border-radius: 15px;
 }
 
+.br-left{
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.br-right{
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.br-0{
+    border-radius: 0;
+}
+
+.br-left-0{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.br-right-0{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .flex{
     display: flex;
     justify-content: center;
@@ -52,6 +76,13 @@ a{
     gap : 1rem;
 }
 
+.gap-0{
+    gap : 0;
+}
+
+.gap-1{
+    gap : 0.25rem;
+}
 .flex-col{
     flex-direction: column ;
 }
@@ -238,10 +269,7 @@ a{
 .text-center{
     text-align: center;
 }
-.text-left{
-    text-align: left;
-}
-.justify-beetween{
+.justify-between{
     justify-content: space-between;
 }
 .justify-center{
@@ -328,6 +356,23 @@ button.bleu:hover {
     width: 2rem;
 }
 
+button.light{
+    background: var(--primary-color-d1);
+}
+
+button.lined{
+    background: none;
+    border: 2px solid var(--primary-color);
+}
+
+strong{
+    color: var(--secondary-color);
+}
+
+.wrap{
+    flex-wrap: wrap;
+}
+
 .br-sm-right{
     border-radius: 15px;
 }
@@ -377,6 +422,13 @@ button.bleu:hover {
     height: fit-content;
 }
 
+.w-max-content{
+    width: max-content;
+}
+.h-max-content{
+    height: max-content;
+}
+
 header {
     z-index : 100;
     max-width: 100%;
@@ -387,6 +439,18 @@ header {
     z-index: 100;
     transform: translateX(-50%);
 }
+
+footer{
+    flex-direction: column;
+}
+
+footer>div{
+    width: 100%;
+    color: white;
+
+}
+
+
 
 .menu-mobile {
     cursor: pointer;
@@ -566,15 +630,12 @@ nav .menu-list {
         gap: 1rem;
     }
 
-    .link-cart {
-        display: none;
+    footer>div{
+        width: 49%;
     }
 
-    .container-cart {
-        display: flex;
-        padding: 1rem;
-        border-radius: 50%;
-        background-color: var(--primary-color-d2);
+    footer{
+        flex-direction: row;
     }
 
     .br-sm-right{
