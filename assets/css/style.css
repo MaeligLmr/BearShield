@@ -313,6 +313,7 @@ button.lined{
 }
 
 header {
+    z-index : 100;
     max-width: 100%;
     width: 95%;
     margin: 0;

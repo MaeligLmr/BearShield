@@ -189,65 +189,6 @@
     <footer>
     </footer>
 
-    <script>
-        // Gestion du calcul de prix dynamique
-        document.addEventListener('DOMContentLoaded', function() {
-            const basePrice = 19.99;
-            const accessories = {
-                'protege-ecran': 9.99,
-                'support-voiture': 14.99,
-                'chargeur-rapide': 24.99,
-                'ecouteurs': 39.99
-            };
-            
-            const finishUpgrade = 5.00; // Prix supplémentaire pour finition brillante
-            const reinforcedUpgrade = 3.00; // Prix pour coins/boutons renforcés
-            
-            function calculatePrice() {
-                let total = basePrice;
-                
-                // Vérifier la finition
-                const finish = document.getElementById('finish');
-                if (finish && finish.checked) {
-                    total += finishUpgrade;
-                }
-                
-                // Vérifier les renforts
-                const cornerType = document.getElementById('corner-type');
-                const buttonType = document.getElementById('button-type');
-                if (cornerType && cornerType.checked) {
-                    total += reinforcedUpgrade;
-                }
-                if (buttonType && buttonType.checked) {
-                    total += reinforcedUpgrade;
-                }
-                
-                // Vérifier les accessoires
-                const accessoryCheckboxes = document.querySelectorAll('input[name="accessories"]:checked');
-                accessoryCheckboxes.forEach(checkbox => {
-                    if (accessories[checkbox.value]) {
-                        total += accessories[checkbox.value];
-                    }
-                });
-                
-                // Mettre à jour l'affichage
-                const priceDisplay = document.getElementById('total-price');
-                if (priceDisplay) {
-                    priceDisplay.textContent = total.toFixed(2) + '€';
-                }
-            }
-            
-            // Écouter les changements sur tous les éléments de formulaire
-            const formElements = document.querySelectorAll('#customization-form input, #customization-form select');
-            formElements.forEach(element => {
-                element.addEventListener('change', calculatePrice);
-            });
-            
-            // Calcul initial
-            calculatePrice();
-        });
-    </script>
-
 </body>
 
 </html>
