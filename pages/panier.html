@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BearShield</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/panier.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
 <body>
     <header class="flex bg-primary-d2 justify-between mt-4 br">
         <a href="./index.html" class="flex pl-4"><img class="logo" src="../assets/img/logo.jpeg" alt="BearShield">
-        <h1 class="">BearShield</h1></a>
+            <h1 class="">BearShield</h1>
+        </a>
         <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
         <label for="menu-toggle" class="menu-mobile">
             <i class="fa-solid fa-bars"></i>
@@ -21,7 +26,8 @@
             <ul class="flex h-100 menu-list">
                 <li><a class="p-4 flex" href="./coques.html">Nos Coques</a></li>
                 <li><a class="p-4 flex" href="./accessoires.html">Nos Accessoires</a></li>
-                <li class="bg-primary br-sm-right"><a class="p-4 flex" href="./personnalisation.html">Créé ta propre coque</a></li>
+                <li class="bg-primary br-sm-right"><a class="p-4 flex" href="./personnalisation.html">Créé ta propre
+                        coque</a></li>
                 <li class="bg-secondary br-sm-right link-cart"><a href="./panier.html" class="p-4 flex">Panier</a></li>
             </ul>
         </nav>
@@ -29,11 +35,50 @@
     <a href="./panier.html" class="container-cart">
         <i class="fa-solid fa-cart-shopping"></i>
     </a>
-    <main>
-        <section>
-            <h2>À propos de nous</h2>
-            <p>BearShield est une entreprise dédiée à la protection de l'environnement.</p>
-        </section>
+    <main class="p-t-max p-4">
+        <h1>Ton Panier</h1>
+        <div class="panier-container">
+            <div class="panier-items">
+                <div class="panier-item">
+                    <div class="flex">
+                        <img src="../assets/img/phone-black.svg" alt="Coque noire" class="panier-item-img">
+                        <div class="panier-item-details">
+                            <h2>Coque noir mat souple</h2>
+                            <p>Prix unitaire: 19,99€</p>
+                        </div>
+                    </div>
+                    <button class="remove-item"><i class="fa-solid fa-trash"></i></button>
+
+                </div>
+                <div class="panier-item">
+                    <div class="flex">
+                        <img src="../assets/img/accessoires/grip3.png" alt="Grip d'un blob" class="panier-item-img">
+                        <div class="panier-item-details">
+                            <h2>Grip d'un blob</h2>
+                            <p>Prix unitaire: 9,99€</p>
+                        </div>
+                    </div>
+                    <button class="remove-item"><i class="fa-solid fa-trash"></i></button>
+                </div>
+
+            </div>
+            <div class="panier-summary">
+                <h2>Résumé de la commande</h2>
+                <div class="line">
+                    <p>Coque noir mat souple</p>
+                    <p class="price">19,99€</p>
+                </div>
+                <div class="line">
+                    <p>Grip d'un blob</p>
+                    <p class="price">9,99€</p>
+                </div>
+                <div class="total">
+                    <h3>Total</h3>
+                <h3 class="price">29,98€</h3>
+                </div>
+                <button class="orange w-100">Valider la commande</button>
+            </div>
+        </div>
     </main>
     <footer class="w-100 bg-secondary flex">
         <div class="p-4 flex justify-center flex-col">
@@ -52,4 +97,5 @@
 
     </footer>
 </body>
+
 </html>
