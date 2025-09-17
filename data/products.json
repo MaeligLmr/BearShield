@@ -50,7 +50,7 @@
   {
     "id": 7,
     "name": "Grip Blob coloré",
-    "image": "../assets/img/accessoires/blob-grip.png",
+    "image": "../assets/img/accessory/blob-grip.png",
     "price": 14.99,
     "description": "Grip coloré avec design blob moderne. Parfait pour une prise en main originale et confortable.",
     "type": "grip"
@@ -58,7 +58,7 @@
   {
     "id": 8,
     "name": "Grip motif chien",
-    "image": "../assets/img/accessoires/dog-grip.png",
+    "image": "../assets/img/accessory/dog-grip.png",
     "price": 16.99,
     "description": "Grip adorable avec motif chien. Idéal pour les amoureux des animaux et un style mignon.",
     "type": "grip"
@@ -66,7 +66,7 @@
   {
     "id": 9,
     "name": "Grip fleur délicate",
-    "image": "../assets/img/accessoires/flower-grip.png",
+    "image": "../assets/img/accessory/flower-grip.png",
     "price": 15.99,
     "description": "Grip élégant avec motif floral. Design raffiné pour un style féminin et naturel.",
     "type": "grip"
@@ -74,7 +74,7 @@
   {
     "id": 10,
     "name": "Grip pastèque fun",
-    "image": "../assets/img/accessoires/watermelon-grip.png",
+    "image": "../assets/img/accessory/watermelon-grip.png",
     "price": 13.99,
     "description": "Grip amusant avec motif pastèque. Parfait pour un look estival et coloré.",
     "type": "grip"
@@ -82,7 +82,7 @@
   {
     "id": 11,
     "name": "Grip design moderne",
-    "image": "../assets/img/accessoires/grip2.png",
+    "image": "../assets/img/accessory/grip2.png",
     "price": 17.99,
     "description": "Grip au design moderne et épuré. Idéal pour un style contemporain et une prise sûre.",
     "type": "grip"
@@ -90,7 +90,7 @@
   {
     "id": 12,
     "name": "Grip style urbain",
-    "image": "../assets/img/accessoires/grip3.png",
+    "image": "../assets/img/accessory/grip3.png",
     "price": 16.49,
     "description": "Grip avec style urbain et moderne. Parfait pour un look tendance et pratique.",
     "type": "grip"
