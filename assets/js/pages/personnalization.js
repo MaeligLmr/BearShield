@@ -125,6 +125,70 @@ document.addEventListener('DOMContentLoaded', () => {
         updateColor(colorRadio);
     }
 
+    function getCustomizationData() {
+        const form = document.querySelector('#customization-form');
+        const formData = new FormData(form);
+        // Associer les codes hex à leur nom
+        const colorMap = {
+            'transparent': 'Transparent',
+            '#2b2b2b': 'Noir',
+            '#ff6b35': 'Orange',
+            '#924036': 'Bordeaux',
+            '#205780': 'Bleu'
+        };
+        let colorValue = formData.get('color');
+        let colorName = colorMap[colorValue] || colorValue;
+        // Récupérer les noms des accessoires sélectionnés
+        let accessories = formData.getAll('accessories');
+        if (accessories.length) {
+            accessories = accessories.map(id => {
+                // Cherche l'input correspondant
+                const input = document.querySelector(`input[name='accessories'][value='${id}']`);
+                if (input) {
+                    // Remonte jusqu'à .accessory-card puis cherche .accessory-name
+                    const card = input.closest('.accessory-card');
+                    if (card) {
+                        const nameElem = card.querySelector('.accessory-name');
+                        if (nameElem) return nameElem.textContent.trim();
+                    }
+                }
+                return id;
+            });
+        }
+        return {
+            phoneModel: formData.get('phone-model'),
+            color: colorName,
+            finish: formData.get('finish') ? 'Brillant' : 'Matte',
+            corners: formData.get('corner-type') ? 'Renforcés' : 'Standards',
+            material: formData.get('material') ? 'Souple' : 'Rigide',
+            buttons: formData.get('button-type') ? 'Renforcés' : 'Standards',
+            accessories: accessories
+        };
+    }
+
+    function addToCart() {
+        const productId = 0;
+        // Récupération du SVG modifié et conversion en image base64
+        const svgElement = document.querySelector('.img-produit');
+        let svgData = new XMLSerializer().serializeToString(svgElement);
+        let svgBase64 = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)));
+        // Récupération du prix total (sans le symbole €) et conversion en float
+        const price = parseFloat(document.querySelector('.price-amount').textContent.replace('€', '').trim());
+        // Récupération des données de personnalisation
+        const customization = getCustomizationData();
+        // Récupération des noms des accessoires sélectionnés
+        
+        const product = {productId: productId, name: 'Coque Personnalisée', price: price, image: svgBase64, type: 'case'};
+        const cartItem = window.cartManager.addProduct(product, customization);
+        console.log('Produit ajouté au panier:', cartItem);
+
+        };
+
+    document.querySelector('.add-to-cart-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        addToCart();
+    });
+
     // Connecter avec le formulaire existant
     document.querySelectorAll('input[name="color"]').forEach(input => {
         input.addEventListener('change', e => updateColor(e.target.value));
@@ -143,4 +207,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateColor('transparent');
     toggleCorners(true);
     toggleButtons(true);
+
+
 });

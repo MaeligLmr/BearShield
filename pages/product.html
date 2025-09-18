@@ -32,7 +32,7 @@
         </div>
         
     <form id="customization-form" action="#" method="post" class="flex flex-col gap-4 align-start p-2" aria-label="Formulaire de personnalisation du produit">
-            <div class="w-100 flex flex-col align-start">
+            <div class="w-100 flex flex-col align-start form-item">
                 <label for="phone-model" class="font-bold text-bleu">Choisi ton téléphone</label>
                 <div class="select-container">
                     <select id="phone-model" name="phone-model" required>
@@ -44,7 +44,31 @@
                     <i class="fas fa-chevron-down select-arrow"></i>
                 </div>
             </div>
-            
+            <div class="w-100 form-item">
+                        <label for="color" class="font-bold text-bleu">Couleur de la coque</label>
+                        <div class="color-selector">
+                            <label class="color-option">
+                                <input type="radio" name="color" value="transparent" required>
+                                <div class="color-circle color-transparent"></div>
+                            </label>
+                            <label class="color-option">
+                                <input type="radio" name="color" value="noir" required>
+                                <div class="color-circle color-noir"></div>
+                            </label>
+                            <label class="color-option">
+                                <input type="radio" name="color" value="orange" required>
+                                <div class="color-circle color-primary"></div>
+                            </label>
+
+                            <label class="color-option">
+                                <input type="radio" name="color" value="bordeaux" required>
+                                <div class="color-circle color-bordeaux"></div>
+                            </label>
+                            <label class="color-option">
+                                <input type="radio" name="color" value="bleu" required>
+                                <div class="color-circle color-secondary"></div>
+                            </label>
+                        </div>
                 <button type="button" id="add-to-cart-btn" class="btn btn-primary w-100 mt-4 p-3">
                     <i class="fa-solid fa-cart-plus mr-2"></i>
                     Ajouter au panier

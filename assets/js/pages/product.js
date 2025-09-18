@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#product-description').textContent = product.description;
                 document.querySelector('#product-price').innerHTML = `<strong>${product.price.toFixed(2)}€</strong>`;
 
-                // Masquer uniquement le select du modèle de téléphone si accessoire
+                // Masquer le select du modèle de téléphone si accessoire
                 if (product.type === 'grip') {
-                    const phoneModelBlock = document.querySelector('.w-100.flex.flex-col.align-start');
+                    const phoneModelBlock = document.querySelectorAll('.form-item');
                     if (phoneModelBlock) {
-                        phoneModelBlock.style.display = 'none';
+                        phoneModelBlock.forEach(block => block.style.display = 'none');
                     }
                 }
 
