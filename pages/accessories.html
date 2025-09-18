@@ -17,7 +17,6 @@
 </head>
 
 <body>
-    <!-- Header Component -->
     <div data-component="header" aria-label="En-tête du site"></div>
 
     <main class="flex flex-col p-4 p-t-max" aria-label="Contenu principal des accessoires">
@@ -30,15 +29,15 @@
             </div>
         </section>
         <section class="w-100 p-0">
-            <div class="w-100 card-container" id="accessories-container" aria-label="Liste des accessoires disponibles">
-                <!-- Les accessoires seront chargés dynamiquement ici -->
-            </div>
+            <div class="w-100 card-container" id="accessories-container" aria-label="Liste des accessoires disponibles"></div>
         </section>
     </main>
     
-    <!-- Footer Component -->
+
     <div data-component="footer" aria-label="Pied de page du site"></div>
 
+    <script src="../assets/js/cart-manager.js"></script>
+    <script src="../assets/js/cart-badge.js"></script>
     <script src="../assets/js/components/routerAccessoires.js"></script>
 </body>
 
