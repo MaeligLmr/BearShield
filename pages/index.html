@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <script src="../assets/js/components.js"></script></head>
 <body class="mt-5">
     <!-- Header Component -->
-    <div data-component="header"></div>
-    <main>
+    <div data-component="header" aria-label="En-tête du site"></div>
+    <main aria-label="Contenu principal">
         <section class="acc-header">
             <div class="acc-header-content">
                 <h1>BearShield</h1>
                 <p class="accroche">Protégez votre téléphone, protégez la planète.</p>
                 <p class="accroche"> BearShield s’engage à proposer des coques et accessoires éco-responsables, conçus pour durer et respectueux de l’environnement.<br>Découvrez nos collections uniques et personnalisez votre protection selon vos envies&nbsp;!</p>
-                <button class="bleu mt-3">En voir plus</button>
+                <a class="btn bleu mt-3" href="./cases.html" aria-label="Découvrir la marque">En voir plus</a>
             </div>
         </section>
         <section class="acc-cree-ta-coque">
@@ -30,21 +31,21 @@
                     <p>Laissez libre cours à votre imagination et concevez une coque unique, à votre image !</p>
                     <p>Choisissez vos couleurs, ajoutez vos motifs ou votre texte, et recevez une protection personnalisée, fabriquée avec des matériaux responsables.</p>
                     <p>Offrez ou offrez-vous une coque qui vous ressemble, tout en respectant la planète.</p>
-                    <button class="bleu-clair mt-3">En voir plus</button>
+                    <a class="btn bleu-clair mt-3" href="./personnalization.html" aria-label="Personnaliser une coque">En voir plus</a>
                 </div>
-                <img class="acc-cree-ta-coque-img" src="../assets/img/acc-coques.png" alt="Coque personnalisée">
+                <img class="acc-cree-ta-coque-img" src="../assets/img/acc-coques.png" alt="Coque personnalisée" aria-label="Image d'une coque personnalisée">
             </div>
         </section>
         <section class="products-image-grid">
             <div class="products-grid">
-                <img src="../assets/img/product/black-case.png" alt="Coque noire" class="product-img">
-                <img src="../assets/img/product/champi-case.png" alt="Coque verte" class="product-img">
-                <img src="../assets/img/product/clear-case.png" alt="Coque rouge" class="product-img">
-                <img src="../assets/img/product/japan-case.png" alt="Coque jaune" class="product-img">
-                <img src="../assets/img/accessory/blob-grip.png" alt="Grip d'un blob" class="product-img">
-                <img src="../assets/img/accessory/dog-grip.png" alt="Grip d'un chien" class="product-img">
-                <img src="../assets/img/accessory/watermelon-grip.png" alt="Grip d'une pastèque" class="product-img">
-                <img src="../assets/img/accessory/flower-grip.png" alt="Grip d'une fleur" class="product-img">
+                <a href="./product.html?id=1"><img src="../assets/img/product/black-case.png" alt="Coque noire" class="product-img"></a>
+                <a href="./product.html?id=2"><img src="../assets/img/product/champi-case.png" alt="Coque verte" class="product-img"></a>
+                <a href="./product.html?id=3"><img src="../assets/img/product/clear-case.png" alt="Coque rouge" class="product-img"></a>
+                <a href="./product.html?id=4"><img src="../assets/img/product/japan-case.png" alt="Coque jaune" class="product-img"></a>
+                <a href="./product.html?id=6"><img src="../assets/img/accessory/blob-grip.png" alt="Grip d'un blob" class="product-img"></a>
+                <a href="./product.html?id=7"><img src="../assets/img/accessory/dog-grip.png" alt="Grip d'un chien" class="product-img"></a>
+                <a href="./product.html?id=8"><img src="../assets/img/accessory/watermelon-grip.png" alt="Grip d'une pastèque" class="product-img"></a>
+                <a href="./product.html?id=9"><img src="../assets/img/accessory/flower-grip.png" alt="Grip d'une fleur" class="product-img"></a>
             </div>
         </section>
         <section class="recyclons-section">
@@ -55,8 +56,8 @@
             </div>
         </section>
     </main>
-        <div data-component="footer"></div>
-    
+    <div data-component="footer" aria-label="Pied de page du site"></div>
+  
     <script src="../assets/js/cart-manager.js"></script>
     <script src="../assets/js/cart-badge.js"></script>
 </body>

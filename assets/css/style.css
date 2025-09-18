@@ -367,7 +367,7 @@ a{
     z-index: 101;
 }
 
-button{
+button, .btn{
     cursor: pointer;
     border: none;
     outline: none;
@@ -391,7 +391,7 @@ button.orange,
     color: var(--primary-color-d2);
 }
 
-button.orange:hover,
+button.orange:hover, .btn.orange:hover,
 .add-to-cart-btn:hover,
 .btn:hover,
 .btn-primary:hover {
@@ -399,27 +399,28 @@ button.orange:hover,
     transform: translateY(-2px);
 }
 
-button.bleu-clair {
+button.bleu-clair, .btn.bleu-clair {
     background-color: var(--primary-color);
     color: var(--primary-color-d2);
 }
 
-button.bleu-clair:hover {
+button.bleu-clair:hover, .btn.bleu-clair:hover {
     background-color: var(--secondary-color-d1);
     transform: translateY(-2px);
 }
 
-button.bleu{
+button.bleu, .btn.bleu {
     background-color: var(--secondary-color);
     color: var(--primary-color-d2);
 }
 
-button.bleu:hover {
+button.bleu:hover, .btn.bleu:hover {
     background-color: var(--primary-color);
     transform: translateY(-2px);
 }
 
 .add-to-cart-btn:active,
+.btn:active,
 .btn:active,
 .btn-primary:active {
     transform: translateY(0);
@@ -609,7 +610,6 @@ nav .menu-list {
     right: 0;
 }
 
-/* Toggle Switch Styles */
 .toggle-container {
     display: flex;
     align-items: center;

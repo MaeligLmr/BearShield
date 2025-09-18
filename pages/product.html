@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../assets/css/personnalization.css">
     <link rel="stylesheet" href="../assets/css/product.css">
     <script src="../assets/js/components.js"></script>
+        <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +17,10 @@
 </head>
 <body>
    
-    <div data-component="header"></div>
-<main class="p-4 pt-5rem">
+    <div data-component="header" aria-label="En-tête du site"></div>
+<main class="p-4 pt-5rem" aria-label="Contenu principal du produit">
         <div class="w-100 flex">
-            <img id="product-image" src="../assets/img/product/photo-phone.jpeg" alt="Phone Photo" class="img-produit">
+            <img id="product-image" class="img-produit" aria-label="Image du produit">
         </div>
         <div class="w-100 mt-12">
 
@@ -29,7 +31,7 @@
             <p id="product-price" class="text-lg font-bold text-bleu"></p>
         </div>
         
-        <form id="customization-form" action="#" method="post" class="flex flex-col gap-4 align-start p-2">
+    <form id="customization-form" action="#" method="post" class="flex flex-col gap-4 align-start p-2" aria-label="Formulaire de personnalisation du produit">
             <div class="w-100 flex flex-col align-start">
                 <label for="phone-model" class="font-bold text-bleu">Choisi ton téléphone</label>
                 <div class="select-container">
@@ -42,31 +44,7 @@
                     <i class="fas fa-chevron-down select-arrow"></i>
                 </div>
             </div>
-            <div class="w-100">
-                <label for="color" class="font-bold text-bleu">Couleur de la coque</label>
-                <div class="color-selector">
-                    <label class="color-option">
-                        <input type="radio" name="color" value="transparent" required>
-                        <div class="color-circle color-transparent"></div>
-                    </label>
-                    <label class="color-option">
-                        <input type="radio" name="color" value="noir" required>
-                        <div class="color-circle color-noir"></div>
-                    </label>
-                    <label class="color-option">
-                        <input type="radio" name="color" value="blanc" required>
-                        <div class="color-circle color-primary"></div>
-                    </label>
-
-                    <label class="color-option">
-                        <input type="radio" name="color" value="orange" required>
-                        <div class="color-circle color-bordeaux"></div>
-                    </label>
-                    <label class="color-option">
-                        <input type="radio" name="color" value="bleu" required>
-                        <div class="color-circle color-secondary"></div>
-                    </label>
-                </div>
+            
                 <button type="button" id="add-to-cart-btn" class="btn btn-primary w-100 mt-4 p-3">
                     <i class="fa-solid fa-cart-plus mr-2"></i>
                     Ajouter au panier
@@ -75,7 +53,7 @@
         </form>
         </div>
     </main>
-    <div data-component="footer"></div>
+    <div data-component="footer" aria-label="Pied de page du site"></div>
 
     <script src="../assets/js/cart-manager.js"></script>
     <script src="../assets/js/cart-badge.js"></script>
