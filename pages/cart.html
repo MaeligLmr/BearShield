@@ -16,52 +16,17 @@
 
 <body>
     <div data-component="header"></div>
-    <main class="p-t-max p-4">
+    <main class="p-t-max p-4 flex flex-col">
         <h1>Ton Panier</h1>
         <div class="panier-container">
-            <div class="panier-items">
-                <div class="panier-item">
-                    <div class="flex">
-                        <img src="../assets/img/product/phone-black.svg" alt="Coque noire" class="panier-item-img">
-                        <div class="panier-item-details">
-                            <h2>Coque noir mat souple</h2>
-                            <p>Prix unitaire: 19,99€</p>
-                        </div>
-                    </div>
-                    <button class="remove-item"><i class="fa-solid fa-trash"></i></button>
-
-                </div>
-                <div class="panier-item">
-                    <div class="flex">
-                        <img src="../assets/img/accessory/grip3.png" alt="Grip d'un blob" class="panier-item-img">
-                        <div class="panier-item-details">
-                            <h2>Grip d'un blob</h2>
-                            <p>Prix unitaire: 9,99€</p>
-                        </div>
-                    </div>
-                    <button class="remove-item"><i class="fa-solid fa-trash"></i></button>
-                </div>
-
-            </div>
-            <div class="panier-summary">
-                <h2>Résumé de la commande</h2>
-                <div class="line">
-                    <p>Coque noir mat souple</p>
-                    <p class="price">19,99€</p>
-                </div>
-                <div class="line">
-                    <p>Grip d'un blob</p>
-                    <p class="price">9,99€</p>
-                </div>
-                <div class="total">
-                    <h3>Total</h3>
-                <h3 class="price">29,98€</h3>
-                </div>
-                <button class="orange w-100">Valider la commande</button>
-            </div>
+            <div class="panier-items"></div>
+            <div class="panier-summary"></div>
         </div>
     </main>
     <div data-component="footer"></div>
+    
+    <script src="../assets/js/cart-manager.js"></script>
+    <script src="../assets/js/pages/cart.js"></script>
 </body>
 
 </html>
