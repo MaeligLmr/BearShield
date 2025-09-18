@@ -27,7 +27,7 @@ function showMessage(message, type = 'error') {
 function addToCart(product) {
     const customization = getCustomizationData();
     // Si accessoire, ne pas vérifier le modèle de téléphone
-    if (product.type !== 'grip' && product.type !== 'accessoire') {
+    if (product.type !== 'grip') {
         if (!customization.phoneModel) {
             showMessage('Veuillez sélectionner un modèle de téléphone', 'error');
             return;
