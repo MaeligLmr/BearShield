@@ -22,6 +22,7 @@ class CartManager {
             price: product.price,
             customization: customization,
             quantity: 1,
+            type: product.type,
             addedAt: new Date().toISOString()
         };
 

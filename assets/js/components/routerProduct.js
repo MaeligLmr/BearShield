@@ -40,7 +40,7 @@ function loadProducts(search="") {
                     container.innerHTML = coques.map(createProductCard).join('');
                                     container.style.gridTemplateColumns = "";
 
-                    const viewProductButtons = container.querySelectorAll('button.lined.w-100');
+                    const viewProductButtons = container.querySelectorAll('button.orange.w-100');
                     viewProductButtons.forEach(btn => {
                         btn.addEventListener('click', (e) => {
                             e.preventDefault();
