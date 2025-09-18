@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const svg = document.querySelector('.img-produit');
-    console.log(svg);
     const base = svg.getElementById('bottom');
     const interior = svg.getElementById('interior');
     const corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'].map(id => svg.getElementById(id));

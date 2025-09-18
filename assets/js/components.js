@@ -15,7 +15,6 @@ async function loadComponents() {
         // Charger le footer
         await loadComponent('footer');
         
-        console.log('Composants chargés avec succès');
     } catch (error) {
         console.error('Erreur lors du chargement des composants:', error);
     }

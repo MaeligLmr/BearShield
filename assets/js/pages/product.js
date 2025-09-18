@@ -38,7 +38,7 @@ function addToCart(product) {
     if (existingMessage) {
         existingMessage.remove();
     }
-    console.log('Produit ajouté au panier:', cartItem);
+    showMessage('Produit ajouté au panier !', 'success');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
