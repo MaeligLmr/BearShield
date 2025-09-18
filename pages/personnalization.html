@@ -118,7 +118,6 @@
 
                     <div class="w-100">
                         <label for="accessories" class="font-bold text-bleu">Accessoires supplémentaires</label>
-                        <div class="accessories-container" id="accessories-container"></div>
                         <div class="products-grid products-grid-personnalization" id="preview-accessories"></div>
                     </div>
                 </div>
@@ -138,42 +137,45 @@
 
     <script>
         let gripsData = [];
+        let selectedAccessories = new Set();
 
-        function createAccessoryRow(grip) {
+        function createAccessoryCard(grip) {
+            const isSelected = selectedAccessories.has(grip.id);
             return `
-                <div class="accessory-row">
-                    <input type="checkbox" id="grip-${grip.id}" name="accessories" value="grip-${grip.id}" class="accessory-checkbox">
-                    <button type="button" class="accessory-button" data-accessory="grip-${grip.id}" data-grip-id="${grip.id}">
-                        <div class="accessory-content">
-                            <p>${grip.name}</p>
-                            <span class="accessory-price">+${grip.price.toFixed(2)}€</span>
-                        </div>
-                    </button>
+                <div class="accessory-card ${isSelected ? 'selected' : ''}" data-grip-id="${grip.id}">
+                    <input type="checkbox" name="accessories" value="grip-${grip.id}" class="accessory-checkbox" ${isSelected ? 'checked' : ''} hidden>
+                    <img src="${grip.image}" alt="${grip.name}" class="accessory-image">
+                    <div class="accessory-info">
+                        <p class="accessory-name">${grip.name}</p>
+                        <span class="accessory-price">+${grip.price.toFixed(2)}€</span>
+                    </div>
                 </div>
             `;
         }
 
-        function updatePreviewAccessories() {
-            const previewContainer = document.querySelector('#preview-accessories');
-            const checkedAccessories = document.querySelectorAll('.accessory-checkbox:checked');
-            
-            if (!previewContainer) return;
+        function updateAccessoriesDisplay() {
+            const container = document.querySelector('#preview-accessories');
+            if (!container || !gripsData.length) return;
 
-            previewContainer.innerHTML = '';
+            container.innerHTML = gripsData.map(createAccessoryCard).join('');
 
-            checkedAccessories.forEach(checkbox => {
-                const gripId = parseInt(checkbox.value.replace('grip-', ''));
-                const grip = gripsData.find(g => g.id === gripId);
-                
-                if (grip) {
-                    const previewItem = document.createElement('div');
-                    previewItem.className = 'preview-item';
-                    previewItem.innerHTML = `
-                        <img src="${grip.image}" alt="${grip.name}" class="preview-accessory-image">
-                        <p class="preview-accessory-name">${grip.name}</p>
-                    `;
-                    previewContainer.appendChild(previewItem);
-                }
+            // Ajouter les événements de clic
+            const accessoryCards = container.querySelectorAll('.accessory-card');
+            accessoryCards.forEach(card => {
+                card.addEventListener('click', (e) => {
+                    const gripId = parseInt(card.getAttribute('data-grip-id'));
+                    const checkbox = card.querySelector('.accessory-checkbox');
+                    
+                    if (selectedAccessories.has(gripId)) {
+                        selectedAccessories.delete(gripId);
+                        card.classList.remove('selected');
+                        checkbox.checked = false;
+                    } else {
+                        selectedAccessories.add(gripId);
+                        card.classList.add('selected');
+                        checkbox.checked = true;
+                    }
+                });
             });
         }
 
@@ -181,25 +183,8 @@
             fetch('../data/products.json')
                 .then(res => res.json())
                 .then(products => {
-                    const grips = products.filter(product => product.type === 'grip');
-                    gripsData = grips;
-                    const container = document.querySelector('#accessories-container');
-                    
-                    if (container) {
-                        container.innerHTML = grips.map(createAccessoryRow).join('');
-                        
-                        const accessoryButtons = container.querySelectorAll('.accessory-button');
-                        accessoryButtons.forEach(btn => {
-                            btn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                const checkbox = btn.parentElement.querySelector('.accessory-checkbox');
-                                checkbox.checked = !checkbox.checked;
-                                btn.classList.toggle('selected', checkbox.checked);
-                                
-                                updatePreviewAccessories();
-                            });
-                        });
-                    }
+                    gripsData = products.filter(product => product.type === 'grip');
+                    updateAccessoriesDisplay();
                 })
                 .catch(error => {
                     console.error('Erreur lors du chargement des accessoires:', error);
