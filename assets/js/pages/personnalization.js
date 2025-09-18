@@ -106,19 +106,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function darkenColor(hex, percent) {
-    // Convert hex to RGB
-    let r = parseInt(hex.slice(1,3), 16);
-    let g = parseInt(hex.slice(3,5), 16);
-    let b = parseInt(hex.slice(5,7), 16);
+        // Convert hex to RGB
+        let r = parseInt(hex.slice(1, 3), 16);
+        let g = parseInt(hex.slice(3, 5), 16);
+        let b = parseInt(hex.slice(5, 7), 16);
 
-    // Réduire chaque composant
-    r = Math.floor(r * (1 - percent));
-    g = Math.floor(g * (1 - percent));
-    b = Math.floor(b * (1 - percent));
+        // Réduire chaque composant
+        r = Math.floor(r * (1 - percent));
+        g = Math.floor(g * (1 - percent));
+        b = Math.floor(b * (1 - percent));
 
-    // Retourner la nouvelle couleur hex
-    return "#" + [r,g,b].map(x => x.toString(16).padStart(2, '0')).join('');
-}
+        // Retourner la nouvelle couleur hex
+        return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
+    }
 
     function setFinish() {
         const colorRadio = document.querySelector('input[name="color"]:checked').value;
@@ -176,17 +176,48 @@ document.addEventListener('DOMContentLoaded', () => {
         // Récupération des données de personnalisation
         const customization = getCustomizationData();
         // Récupération des noms des accessoires sélectionnés
-        
-        const product = { name: 'Coque Personnalisée', price: price, image: svgBase64, type: 'case'};
-        const cartItem = window.cartManager.addProduct(product, customization);
-        console.log('Produit ajouté au panier:', cartItem);
 
-        };
+        const product = { name: 'Coque Personnalisée', price: price, image: svgBase64, type: 'case' };
+        if (!customization.phoneModel) {
+            showMessage('Veuillez sélectionner un modèle de téléphone', 'error');
+            return;
+        }
+        window.cartManager.addProduct(product, customization);
+        showMessage('Produit ajouté au panier !', 'success');
+
+    };
 
     document.querySelector('.add-to-cart-btn').addEventListener('click', (e) => {
         e.preventDefault();
         addToCart();
     });
+
+    function showMessage(message, type = 'error') {
+        const existingMessage = document.querySelector('.form-message-fixed');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `form-message form-message-${type} form-message-fixed`;
+        messageDiv.textContent = message;
+        messageDiv.style.position = 'fixed';
+        messageDiv.style.top = '4rem';
+        messageDiv.style.left = '50%';
+        messageDiv.style.transform = 'translateX(-50%)';
+        messageDiv.style.zIndex = '9999';
+        messageDiv.style.padding = '1em 2em';
+        messageDiv.style.textAlign = 'center';
+        messageDiv.style.background = type === 'error' ? '#ffdddd' : '#ddffdd';
+        messageDiv.style.color = '#222';
+
+        document.body.appendChild(messageDiv);
+
+        // Auto-hide après 3s
+        setTimeout(() => {
+            messageDiv.remove();
+        }, 3000);
+    }
 
     // Connecter avec le formulaire existant
     document.querySelectorAll('input[name="color"]').forEach(input => {
