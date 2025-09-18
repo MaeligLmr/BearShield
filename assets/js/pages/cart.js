@@ -8,11 +8,10 @@ function createCartItemHTML(cartItem) {
         <p class="customization-info"><strong>Matériau</strong>: ${cartItem.customization.material || 'Non spécifié'}</p>
         <p class="customization-info"><strong>Boutons</strong>: ${cartItem.customization.buttons || 'Non spécifiés'}</p>
         <p class="customization-info"><strong>Accessoires</strong>: ${cartItem.customization.accessories && cartItem.customization.accessories.length > 0 ? cartItem.customization.accessories.join(', ') : 'Aucun'}</p>
-        
-        </div>` :  `<div><p class="customization-info"><strong>Téléphone</strong>: ${cartItem.customization.phoneModel || 'Non spécifié'}</p>
+
+        </div>` :  cartItem.type === 'case' ? `<div><p class="customization-info"><strong>Téléphone</strong>: ${cartItem.customization.phoneModel || 'Non spécifié'}</p>
         <p class="customization-info"><strong>Couleur</strong>: ${cartItem.customization.color || 'Non spécifiée'}</p>
-        </div>` :
-        '';
+        </div>` : '' : '';
     
     return `
         <div class="panier-item" data-cart-id="${cartItem.id}">
