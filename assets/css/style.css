@@ -400,7 +400,6 @@ button.bleu:hover {
     transform: translateY(0);
 }
 
-/* Styles spécifiques pour le bouton d'ajout au panier */
 #add-to-cart-btn {
     display: flex;
     align-items: center;
