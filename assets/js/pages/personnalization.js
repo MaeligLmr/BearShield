@@ -167,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function addToCart() {
-        const productId = 0;
         // Récupération du SVG modifié et conversion en image base64
         const svgElement = document.querySelector('.img-produit');
         let svgData = new XMLSerializer().serializeToString(svgElement);
@@ -178,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const customization = getCustomizationData();
         // Récupération des noms des accessoires sélectionnés
         
-        const product = {productId: productId, name: 'Coque Personnalisée', price: price, image: svgBase64, type: 'case'};
+        const product = { name: 'Coque Personnalisée', price: price, image: svgBase64, type: 'case'};
         const cartItem = window.cartManager.addProduct(product, customization);
         console.log('Produit ajouté au panier:', cartItem);
 

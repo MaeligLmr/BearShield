@@ -1,14 +1,17 @@
 function createCartItemHTML(cartItem) {
-    const customizationText = cartItem.customization ? 
+    const customizationText = cartItem.customization ? cartItem.productId === undefined ?
         `<div><p class="customization-info"><strong>Téléphone</strong>: ${cartItem.customization.phoneModel || 'Non spécifié'}</p>
         <p class="customization-info"><strong>Couleur</strong>: ${cartItem.customization.color || 'Non spécifiée'}</p>
+        
         <p class="customization-info"><strong>Finition</strong>: ${cartItem.customization.finish || 'Non spécifiée'}</p>
         <p class="customization-info"><strong>Coins</strong>: ${cartItem.customization.corners || 'Non spécifiés'}</p>
         <p class="customization-info"><strong>Matériau</strong>: ${cartItem.customization.material || 'Non spécifié'}</p>
         <p class="customization-info"><strong>Boutons</strong>: ${cartItem.customization.buttons || 'Non spécifiés'}</p>
         <p class="customization-info"><strong>Accessoires</strong>: ${cartItem.customization.accessories && cartItem.customization.accessories.length > 0 ? cartItem.customization.accessories.join(', ') : 'Aucun'}</p>
         
-        </div>` : 
+        </div>` :  `<div><p class="customization-info"><strong>Téléphone</strong>: ${cartItem.customization.phoneModel || 'Non spécifié'}</p>
+        <p class="customization-info"><strong>Couleur</strong>: ${cartItem.customization.color || 'Non spécifiée'}</p>
+        </div>` :
         '';
     
     return `
