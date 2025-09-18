@@ -165,18 +165,6 @@ select option:first-child {
     cursor: pointer;
 }
 
-.accessory-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.accessory-content p{
-    color : var(--secondary-color);
-}
-
-
 .accessory-row {
     display: flex;
     align-items: center;
@@ -296,13 +284,6 @@ form {
     }
 }
 
-.accessory-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
 .accessory-price {
     font-weight: bold;
     color: var(--primary-color);
@@ -311,16 +292,6 @@ form {
 .accessory-button.selected {
     background-color: var(--primary-color-d1);
     border-color: var(--primary-color);
-}
-
-.preview-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem;
-    border: 1px solid var(--primary-color-d1);
-    border-radius: 8px;
-    width: 100%;
 }
 
 .products-grid-personnalization {
@@ -335,14 +306,54 @@ form {
     margin-bottom: 0.5rem;
 }
 
-.preview-accessory-name {
+.accessory-card.selected .accessory-price {
+    color: var(--secondary-color);
+}
+
+.accessory-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    max-width: 160px;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color-d1);
+}
+
+.accessory-card:hover {
+    border: 2px solid var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.accessory-card.selected {
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color-d1);
+}
+
+.accessory-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+}
+
+.accessory-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.accessory-name {
     font-size: 0.75rem;
     text-align: center;
     color: var(--secondary-color);
     margin: 0;
     line-height: 1.2;
-}
-
-.accessory-button.selected .accessory-price {
-    color: var(--secondary-color);
 }
