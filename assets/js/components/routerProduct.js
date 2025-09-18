@@ -8,8 +8,7 @@ function createProductCard(product) {
                     <span><strong>${product.price.toFixed(2)}€</strong></span>
                 </div>
                 <div class="flex flex-col gap-1 w-100">
-                    <button class="lined w-100" data-product-id="${product.id}">Voir le produit</button>
-                    <button class="orange w-100">Ajouter au panier</button>
+                    <button class="orange w-100" data-product-id="${product.id}">Voir le produit</button>
                 </div>
             </div>
         </div>
