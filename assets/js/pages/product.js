@@ -26,24 +26,18 @@ function showMessage(message, type = 'error') {
 
 function addToCart(product) {
     const customization = getCustomizationData();
-    
-    if (!customization.phoneModel) {
-        showMessage('Veuillez sélectionner un modèle de téléphone', 'error');
-        return;
+    // Si accessoire, ne pas vérifier le modèle de téléphone
+    if (product.type !== 'grip' && product.type !== 'accessoire') {
+        if (!customization.phoneModel) {
+            showMessage('Veuillez sélectionner un modèle de téléphone', 'error');
+            return;
+        }
     }
-    
-    if (!customization.color) {
-        showMessage('Veuillez choisir une couleur', 'error');
-        return;
-    }
-    
     const cartItem = window.cartManager.addProduct(product, customization);
-    
     const existingMessage = document.querySelector('.form-message');
     if (existingMessage) {
         existingMessage.remove();
     }
-    
     console.log('Produit ajouté au panier:', cartItem);
 }
 
@@ -59,7 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector('#product-name').textContent = product.name;
                 document.querySelector('#product-description').textContent = product.description;
                 document.querySelector('#product-price').innerHTML = `<strong>${product.price.toFixed(2)}€</strong>`;
-                
+
+                // Masquer uniquement le select du modèle de téléphone si accessoire
+                if (product.type === 'grip') {
+                    const phoneModelBlock = document.querySelector('.w-100.flex.flex-col.align-start');
+                    if (phoneModelBlock) {
+                        phoneModelBlock.style.display = 'none';
+                    }
+                }
+
                 const addToCartBtn = document.querySelector('#add-to-cart-btn');
                 if (addToCartBtn) {
                     addToCartBtn.addEventListener('click', (e) => {
