@@ -91,10 +91,6 @@ i:hover{
     padding-bottom: 0.5rem;
 }
 
-.info-produit {
-    align-items: flex-start;
-}
-
 .total {
     border-top: 2px solid #e0e0e0;
     font-weight: bold;

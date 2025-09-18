@@ -151,6 +151,7 @@
                 <p class="price-label">Prix total</p>
                 <p class="price-amount" id="total-price">29,99€</p>
             </div>
+            <div class="selected-accessories" id="selected-accessories"></div>
             <button type="submit" form="customization-form" class="add-to-cart-btn">
                 <i class="fas fa-shopping-cart"></i>
                 Ajouter au panier
@@ -165,10 +166,22 @@
 
         function updateTotalPrice() {
             let total = BASE_PRICE;
+            const accessoriesContainer = document.getElementById('selected-accessories');
+            
+            accessoriesContainer.innerHTML = '';
+            
             selectedAccessories.forEach(id => {
                 const grip = gripsData.find(g => g.id === id);
-                if (grip) total += grip.price;
+                if (grip) {
+                    total += grip.price;
+                    
+                    const accessoryPreview = document.createElement('div');
+                    accessoryPreview.className = 'accessory-preview';
+                    accessoryPreview.innerHTML = `<img src="${grip.image}" alt="${grip.name}" title="${grip.name} (+${grip.price.toFixed(2)}€)">`;
+                    accessoriesContainer.appendChild(accessoryPreview);
+                }
             });
+            
             document.getElementById('total-price').textContent = total.toFixed(2) + '€';
         }
 
@@ -192,7 +205,6 @@
 
             container.innerHTML = gripsData.map(createAccessoryCard).join('');
 
-            // Ajouter les événements de clic
             const accessoryCards = container.querySelectorAll('.accessory-card');
             accessoryCards.forEach(card => {
                 card.addEventListener('click', (e) => {

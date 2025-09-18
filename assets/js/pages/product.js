@@ -17,11 +17,24 @@ function showMessage(message, type = 'error') {
     }
 
     const messageDiv = document.createElement('div');
-    messageDiv.className = `form-message form-message-${type}`;
+    messageDiv.className = `form-message form-message-${type} form-message-fixed`;
     messageDiv.textContent = message;
+    messageDiv.style.position = 'fixed';
+    messageDiv.style.top = '4rem';
+    messageDiv.style.left = '50%';
+    messageDiv.style.transform = 'translateX(-50%)';
+    messageDiv.style.zIndex = '9999';
+    messageDiv.style.padding = '1em 2em';
+    messageDiv.style.textAlign = 'center';
+    messageDiv.style.background = type === 'error' ? '#ffdddd' : '#ddffdd';
+    messageDiv.style.color = '#222';
 
     const addToCartBtn = document.querySelector('#add-to-cart-btn');
     addToCartBtn.parentNode.insertBefore(messageDiv, addToCartBtn);
+
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 3000);
 }
 
 function addToCart(product) {
@@ -42,6 +55,11 @@ function addToCart(product) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const transparentColorOption = document.querySelector('input[name="color"][value="transparent"]');
+    if (transparentColorOption) {
+        transparentColorOption.checked = true;
+    }
+
     fetch('../data/products.json')
         .then(res => res.json())
         .then(products => {
