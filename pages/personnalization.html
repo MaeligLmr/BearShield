@@ -162,6 +162,16 @@
     <script>
         let gripsData = [];
         let selectedAccessories = new Set();
+        const BASE_PRICE = 29.99;
+
+        function updateTotalPrice() {
+            let total = BASE_PRICE;
+            selectedAccessories.forEach(id => {
+                const grip = gripsData.find(g => g.id === id);
+                if (grip) total += grip.price;
+            });
+            document.getElementById('total-price').textContent = total.toFixed(2) + '€';
+        }
 
         function createAccessoryCard(grip) {
             const isSelected = selectedAccessories.has(grip.id);
@@ -189,7 +199,6 @@
                 card.addEventListener('click', (e) => {
                     const gripId = parseInt(card.getAttribute('data-grip-id'));
                     const checkbox = card.querySelector('.accessory-checkbox');
-                    
                     if (selectedAccessories.has(gripId)) {
                         selectedAccessories.delete(gripId);
                         card.classList.remove('selected');
@@ -199,8 +208,10 @@
                         card.classList.add('selected');
                         checkbox.checked = true;
                     }
+                    updateTotalPrice();
                 });
             });
+            updateTotalPrice();
         }
 
         function loadAccessoriesForCustomization() {
