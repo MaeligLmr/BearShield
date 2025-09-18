@@ -16,26 +16,26 @@
 
 <body>
     <!-- Header Component -->
-    <div data-component="header"></div>
+    <div data-component="header" aria-label="En-tête du site"></div>
 
-    <main class="flex flex-col p-4 p-t-max">
+    <main class="flex flex-col p-4 p-t-max" aria-label="Contenu principal des accessoires">
         <h1 class="mt-4">Nos Accessoires</h1>
 
         <section id="recherche" class="w-100 p-0 ">
             <div class="w-100 flex justify-center gap-0">
                 <input type="text" placeholder="Rechercher un modèle..." class="input-search">
-                <button class="button-search orange">Rechercher</button>
+                <button class="button-search orange" aria-label="Rechercher un accessoire">Rechercher</button>
             </div>
         </section>
         <section class="w-100 p-0">
-            <div class="w-100 card-container" id="accessories-container">
+            <div class="w-100 card-container" id="accessories-container" aria-label="Liste des accessoires disponibles">
                 <!-- Les accessoires seront chargés dynamiquement ici -->
             </div>
         </section>
     </main>
     
     <!-- Footer Component -->
-    <div data-component="footer"></div>
+    <div data-component="footer" aria-label="Pied de page du site"></div>
 
     <script src="../assets/js/components/routerAccessoires.js"></script>
 </body>

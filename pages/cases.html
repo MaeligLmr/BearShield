@@ -16,23 +16,23 @@
 
 <body>
     
-    <div data-component="header"></div>
+    <div data-component="header" aria-label="En-tête du site"></div>
 
-    <main class="flex flex-col p-4 pt-5rem">
+    <main class="flex flex-col p-4 pt-5rem" aria-label="Contenu principal des coques">
         <h1 class="mt-4">Nos Coques</h1>
 
         <section class="w-100 p-0">
             <div class="w-100 flex justify-center gap-0">
                 <input type="text" placeholder="Rechercher un modèle..." class="input-search">
-                <button class="button-search orange">Rechercher</button>
+                <button class="button-search orange" aria-label="Rechercher une coque">Rechercher</button>
             </div>
         </section>
         <section class="w-100 p-0">
-            <div class="w-100 card-container" id="products-container">
+            <div class="w-100 card-container" id="products-container" aria-label="Liste des coques disponibles">
             </div>
         </section>
     </main>
-    <div data-component="footer"></div>
+    <div data-component="footer" aria-label="Pied de page du site"></div>
 <script src="../assets/js/components/routerProduct.js"></script>
 </body>
 

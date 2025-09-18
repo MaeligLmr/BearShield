@@ -15,15 +15,15 @@
 </head>
 
 <body>
-    <div data-component="header"></div>
-    <main class="p-t-max p-4 flex flex-col">
+    <div data-component="header" aria-label="En-tête du site"></div>
+    <main class="p-t-max p-4 flex flex-col" aria-label="Contenu principal du panier">
         <h1>Ton Panier</h1>
         <div class="panier-container">
-            <div class="panier-items"></div>
-            <div class="panier-summary"></div>
+            <div class="panier-items" aria-label="Liste des articles du panier"></div>
+            <div class="panier-summary" aria-label="Résumé du panier"></div>
         </div>
     </main>
-    <div data-component="footer"></div>
+    <div data-component="footer" aria-label="Pied de page du site"></div>
     
     <script src="../assets/js/cart-manager.js"></script>
     <script src="../assets/js/pages/cart.js"></script>
