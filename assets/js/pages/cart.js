@@ -5,7 +5,7 @@ function createCartItemHTML(cartItem) {
     
     return `
         <div class="panier-item" data-cart-id="${cartItem.id}">
-            <div class="flex w-100 justify-left">
+            <div class="flex w-100 justify-left info-produit">
                 <img src="${cartItem.image}" alt="${cartItem.name}" class="panier-item-img">
                 <div class="panier-item-details">
                     <div class="flex flex-col align-start">

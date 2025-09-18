@@ -45,7 +45,8 @@ i:hover{
 
 .panier-item-details {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 0.5rem;
     width: 100%;
@@ -90,6 +91,9 @@ i:hover{
     padding-bottom: 0.5rem;
 }
 
+.info-produit {
+    align-items: flex-start;
+}
 
 .total {
     border-top: 2px solid #e0e0e0;
@@ -147,6 +151,11 @@ i:hover{
         gap: 3rem;
         max-width: 80%;
         margin: auto;
+    }
+
+    .panier-item-details {
+        flex-direction: row;
+        align-items: center;
     }
     
     
