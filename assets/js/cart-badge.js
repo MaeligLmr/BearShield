@@ -46,7 +46,7 @@ class CartBadge {
         if (!this.badgeElement || !window.cartManager) return;
 
         const itemCount = window.cartManager.getItemCount();
-        
+
         if (itemCount > 0) {
             this.badgeElement.textContent = itemCount;
             this.badgeElement.style.display = 'flex';

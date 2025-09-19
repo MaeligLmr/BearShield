@@ -1,12 +1,12 @@
-.input-search{
+.input-search {
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
     border: 0.5px solid #a8a8a8;
-   width : 100%;
-   padding: 1rem;
+    width: 100%;
+    padding: 1rem;
 }
 
-.button-search{
+.button-search {
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 0px;
@@ -16,15 +16,16 @@
     cursor: pointer;
 }
 
-button.button-search:hover{
+button.button-search:hover {
     transform: none;
 }
 
 main {
     min-height: 80vh;
 }
-.card{
-    width : 100%;
+
+.card {
+    width: 100%;
     border: 1px solid #e0e0e0;
     border-radius: 15px;
     padding: 1rem;
@@ -34,17 +35,17 @@ main {
     align-items: center;
     justify-content: space-between;
     max-height: 70vh;
-    gap : 1rem;
+    gap: 1rem;
 }
 
-.img-card{
+.img-card {
     object-fit: contain;
     height: 40vh;
     width: auto;
     max-width: 100%;
 }
 
-.card-container{
+.card-container {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
@@ -52,27 +53,29 @@ main {
 }
 
 @media (min-width: 868px) {
-    .card{
+    .card {
         width: 100%;
     }
-    .img-card{
+
+    .img-card {
         height: 35vh;
     }
 
-    .card-container{
+    .card-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 1030px) {
-    .card{
+    .card {
         width: 100%;
     }
-    .img-card{
+
+    .img-card {
         height: 35vh;
     }
 
-    .card-container{
+    .card-container {
         grid-template-columns: repeat(4, 1fr);
     }
 }

@@ -33,11 +33,11 @@
     flex-shrink: 0;
 }
 
-i:hover{
-    color : var(--primary-color);
+i:hover {
+    color: var(--primary-color);
 }
 
-.remove-item{
+.remove-item {
     cursor: pointer;
     font-size: 1.2rem;
     background-color: transparent;
@@ -96,7 +96,7 @@ i:hover{
     font-weight: bold;
     font-size: large;
     color: var(--secondary-color);
-    padding : 2rem 1rem;
+    padding: 2rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -107,12 +107,13 @@ i:hover{
     font-size: xx-large;
 }
 
-.line{
-    padding : 1rem 0;
-    display : flex;
+.line {
+    padding: 1rem 0;
+    display: flex;
     justify-content: space-between;
     color: var(--secondary-color);
 }
+
 .line .price {
     font-size: large;
     color: var(--primary-color);
@@ -153,13 +154,13 @@ i:hover{
         flex-direction: row;
         align-items: center;
     }
-    
-    
+
+
     .panier-item-details h2 {
         font-size: 1.4rem;
     }
 
-    .panier-item{
+    .panier-item {
         flex-direction: row;
     }
 }
@@ -176,5 +177,3 @@ i:hover{
     font-size: 0.9rem;
     margin-bottom: 0;
 }
-
-

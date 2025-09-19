@@ -15,19 +15,19 @@ function createAccessoryCard(product) {
     `;
 }
 
-function loadAccessories(search="") {
+function loadAccessories(search = "") {
     fetch('../data/products.json')
         .then(res => res.json())
         .then(products => {
             let grips = products.filter(product => product.type === 'grip');
             if (search !== "") {
-                grips = grips.filter(product => 
-                    product.name.toLowerCase().includes(search.toLowerCase()) || 
+                grips = grips.filter(product =>
+                    product.name.toLowerCase().includes(search.toLowerCase()) ||
                     product.description.toLowerCase().includes(search.toLowerCase())
                 );
             }
             const container = document.querySelector('#accessories-container');
-            
+
             if (container) {
                 if (grips.length === 0 && search !== "") {
                     container.innerHTML = `
@@ -57,17 +57,17 @@ function loadAccessories(search="") {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadAccessories();
-    
+
     // Récupération des éléments de recherche
     const searchInput = document.querySelector('.input-search');
     const searchButton = document.querySelector('.button-search');
-    
+
     // Fonction de recherche
     function performSearch() {
         const searchTerm = searchInput.value.trim();
         loadAccessories(searchTerm);
     }
-    
+
     // Événement sur le bouton de recherche
     if (searchButton) {
         searchButton.addEventListener('click', (e) => {
@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
             performSearch();
         });
     }
-    
+
     // Événement sur la saisie
     if (searchInput) {
-        
+
         // Recherche avec la touche Entrée
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {

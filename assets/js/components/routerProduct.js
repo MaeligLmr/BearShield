@@ -15,19 +15,19 @@ function createProductCard(product) {
     `;
 }
 
-function loadProducts(search="") {
+function loadProducts(search = "") {
     fetch('../data/products.json')
         .then(res => res.json())
         .then(products => {
             let coques = products.filter(product => product.type === 'coque');
-             if (search !== "") {
-                coques = coques.filter(product => 
-                    product.name.toLowerCase().includes(search.toLowerCase()) || 
+            if (search !== "") {
+                coques = coques.filter(product =>
+                    product.name.toLowerCase().includes(search.toLowerCase()) ||
                     product.description.toLowerCase().includes(search.toLowerCase())
                 );
             }
             const container = document.querySelector('#products-container');
-           
+
             if (container) {
                 if (coques.length === 0 && search !== "") {
                     container.innerHTML = `
@@ -35,10 +35,10 @@ function loadProducts(search="") {
                             <p>Aucune coque trouvée pour "${search}"</p>
                         </div>
                     `;
-                     container.style.gridTemplateColumns = "1fr";
+                    container.style.gridTemplateColumns = "1fr";
                 } else {
                     container.innerHTML = coques.map(createProductCard).join('');
-                                    container.style.gridTemplateColumns = "";
+                    container.style.gridTemplateColumns = "";
 
                     const viewProductButtons = container.querySelectorAll('button.orange.w-100');
                     viewProductButtons.forEach(btn => {
@@ -59,17 +59,17 @@ function loadProducts(search="") {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadProducts();
-    
+
     // Récupération des éléments de recherche
     const searchInput = document.querySelector('.input-search');
     const searchButton = document.querySelector('.button-search');
-    
+
     // Fonction de recherche
     function performSearch() {
         const searchTerm = searchInput.value.trim();
         loadProducts(searchTerm);
     }
-    
+
     // Événement sur le bouton de recherche
     if (searchButton) {
         searchButton.addEventListener('click', (e) => {
@@ -77,10 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
             performSearch();
         });
     }
-    
+
     // Événement sur la saisie
     if (searchInput) {
-    
+
         // Recherche avec la touche Entrée
         searchInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
