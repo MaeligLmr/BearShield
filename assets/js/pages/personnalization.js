@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const svg = document.querySelector('.img-produit');
-    const base = svg.getElementById('bottom');
-    const interior = svg.getElementById('interior');
-    const corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'].map(id => svg.getElementById(id));
-    const buttons = ['btn-1', 'btn-2', 'btn-3'].map(id => svg.getElementById(id));
+    const base = svg.querySelector('.bottom');
+    const interior = svg.querySelector('.interior');
+    const corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'].map(id => svg.querySelector(`.${id}`));
+    const buttons = ['btn-1', 'btn-2', 'btn-3'].map(id => svg.querySelector(`.${id}`));
 
     function updateColor(color) {
-        const isGlossy = document.getElementById('finish').checked;
+        const isGlossy = document.querySelector('input[name="finish"]').checked;
         let fillValue, strokeValue;
         const svg = document.querySelector('.img-produit');
         // Gestion du transparent : fond noir très léger, stroke blanc visible
@@ -120,12 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function setFinish() {
-        const colorRadio = document.querySelector('input[name="color"]:checked').value;
-        updateColor(colorRadio);
+        const colorRadio = document.querySelector('input[name="color"]:checked');
+        if (colorRadio) {
+            updateColor(colorRadio.value);
+        }
     }
 
     function getCustomizationData() {
-        const form = document.querySelector('#customization-form');
+        const form = document.querySelector('.customization-form');
         const formData = new FormData(form);
         // Associer les codes hex à leur nom
         const colorMap = {
@@ -219,18 +221,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Connecter avec le formulaire existant
+
     document.querySelectorAll('input[name="color"]').forEach(input => {
         input.addEventListener('change', e => updateColor(e.target.value));
     });
-    document.getElementById('corner-type').addEventListener('change', e => toggleCorners(e.target.checked));
-    document.getElementById('button-type').addEventListener('change', e => toggleButtons(e.target.checked));
-    document.getElementById('finish').addEventListener('change', setFinish);
+    document.querySelector('input[name="corner-type"]').addEventListener('change', e => toggleCorners(e.target.checked));
+    document.querySelector('input[name="button-type"]').addEventListener('change', e => toggleButtons(e.target.checked));
+    document.querySelector('input[name="finish"]').addEventListener('change', setFinish);
 
     // Pré-selection par défaut
     document.querySelector('input[name="color"][value="transparent"]').checked = true;
-    document.getElementById('corner-type').checked = true;
-    document.getElementById('button-type').checked = true;
-    document.getElementById('finish').checked = true;
+    document.querySelector('input[name="corner-type"]').checked = true;
+    document.querySelector('input[name="button-type"]').checked = true;
+    document.querySelector('input[name="finish"]').checked = true;
 
     // Appliquer les valeurs par défaut
     updateColor('transparent');
