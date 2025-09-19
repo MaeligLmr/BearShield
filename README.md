@@ -161,7 +161,16 @@ BearShield/
 
 
 
+---
+## Livrables
+### Wireframes:
+![WireFrames](https://github.com/user-attachments/assets/4c67660b-8517-4864-a69a-a5a5eaf91010)
 
-
+Lien vers le site: [https://maeliglmr.github.io/BearShield/pages/index.html](https://maeliglmr.github.io/BearShield/pages/index.html)
 
 ---
+
+
+## Développeuses:
+- [Maëlig LAMARRE](https://github.com/MaeligLmr)
+- [Morgane DASSONVILLE](https://github.com/Jun080)
