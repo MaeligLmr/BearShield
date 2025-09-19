@@ -139,14 +139,14 @@ BearShield/
 
 ## Fonctionnalités Responsive
 
-### **Mobile (< 768px)**
+### **Mobile (< 978px)**
 - **Menu hamburger** avec animation
 - **Grilles** : 1 colonne
 - **Toggles** : Pleine largeur
 - **Navigation** : Menu déroulant
 - **Bouton panier** : Flottant fixe
 
-### **Desktop (> 768px)**
+### **Desktop (> 978px)**
 - **Navigation** horizontale
 - **Grilles** : 4 colonnes
 - **Layout** : Sidebar + contenu
