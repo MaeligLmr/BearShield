@@ -1,10 +1,16 @@
 .img-produit {
     width: auto;
-    max-width: 500px;
+    max-width: 90vw;
     height: auto;
 }
 
 #product-image {
     position: revert;
     transform: none;
+}
+
+@media (min-width: 978px) {
+    .img-produit {
+        width : 45vw;
+    }
 }
