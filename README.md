@@ -37,16 +37,16 @@ Notre cible sont les jeunes / les étudiants de 15 à 26 ans
 
 ### **Personnalisation de Coque** 
 - **Interface de création avancée** :
-  -  **Toggles personnalisés** avec texte intégré (4rem × 100%)
+  -  **Toggles personnalisés** avec texte intégré
   -  **Sélecteur de couleur** avec cercles colorés visuels
   -  **Sélection de téléphone** avec dropdown stylisé Font Awesome
+  -  **Personnalisation du rendu visuel** : Matière, Finition, Style des boutons, Style des coins
   -  **Multi-sélection d'accessoires**
 - **Interface responsive** : Layout mobile/desktop adaptatif
-- **Barre de prix** fixe en bas de page avec total dynamique
-- **Transitions fluides** et effets hover sur tous les éléments
+- **Barre de prix** fixe en bas de page avec total et séléction d'accessoires dynamique
 
 ### **Panier d'Achat**
-- **Interface moderne** avec grille responsive (2fr 1fr desktop)
+- **Interface moderne** avec grille responsive
 - **Gestion des articles** :
   -  Suppression d'articles
   -  Calcul automatique des totaux
@@ -63,9 +63,9 @@ Notre cible sont les jeunes / les étudiants de 15 à 26 ans
 - **Chargement automatique** via JavaScript
 - **Paths relatifs** gérés automatiquement
 
-## 🎨 Design System
+## Design System
 
-### 🎨 **Palette de Couleurs**
+### **Palette de Couleurs**
 ```css
 --primary-color: #ff6b35      /* Orange principal */
 --secondary-color: #274060     /* Bleu foncé */
@@ -74,15 +74,15 @@ Notre cible sont les jeunes / les étudiants de 15 à 26 ans
 --secondary-color-d1: #205780  /* Bleu moyen */
 ```
 
-### 📝 **Typographie**
+### **Typographie**
 - **Titres** : Lexend Deca (800 weight)
 - **Corps** : Montserrat (400-600 weight)
 - **Hiérarchie** claire avec tailles adaptives
 
 
-## 🛠️ Architecture Technique
+##  Architecture Technique
 
-### 📁 **Structure des Fichiers**
+### **Structure des Fichiers**
 ```
 BearShield/
 ├── pages/                    # Pages HTML
@@ -135,6 +135,7 @@ BearShield/
 - **Composants modulaires** avec auto-chargement
 - **Gestion d'événements** optimisée
 - **Navigation SPA-like** entre pages produits
+- **Calcul automatique du panier gardé en local storage**
 
 ## Fonctionnalités Responsive
 
