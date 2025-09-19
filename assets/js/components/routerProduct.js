@@ -1,3 +1,4 @@
+// Fonction pour créer une carte produit
 function createProductCard(product) {
     return `
         <div class="card">
@@ -15,11 +16,13 @@ function createProductCard(product) {
     `;
 }
 
+// Fonction pour charger les produits et les afficher
 function loadProducts(search = "") {
     fetch('../data/products.json')
         .then(res => res.json())
         .then(products => {
             let coques = products.filter(product => product.type === 'coque');
+            // Filtrer les produits si une recherche est effectuée
             if (search !== "") {
                 coques = coques.filter(product =>
                     product.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -27,7 +30,7 @@ function loadProducts(search = "") {
                 );
             }
             const container = document.querySelector('#products-container');
-
+            // Afficher les produits
             if (container) {
                 if (coques.length === 0 && search !== "") {
                     container.innerHTML = `
@@ -56,7 +59,7 @@ function loadProducts(search = "") {
         });
 }
 
-
+// Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     loadProducts();
 

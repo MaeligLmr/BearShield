@@ -5,6 +5,7 @@ class CartBadge {
         this.init();
     }
 
+    // Initialisation et attente que le DOM soit prêt
     init() {
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.waitForComponents());
@@ -13,6 +14,7 @@ class CartBadge {
         }
     }
 
+    // Attendre que les composants soient chargés
     waitForComponents() {
         const checkContainer = () => {
             const container = document.querySelector('.container-cart');
@@ -25,6 +27,7 @@ class CartBadge {
         checkContainer();
     }
 
+    // Configurer le badge et les écouteurs d'événements
     setup() {
         this.cartIconContainer = document.querySelector('.container-cart');
         if (this.cartIconContainer) {
@@ -34,6 +37,7 @@ class CartBadge {
         }
     }
 
+    // Créer l'élément badge s'il n'existe pas
     createBadge() {
         if (!this.badgeElement) {
             this.badgeElement = document.createElement('span');
@@ -42,6 +46,7 @@ class CartBadge {
         }
     }
 
+    // Mettre à jour l'affichage du badge en fonction du nombre d'articles dans le panier
     updateDisplay() {
         if (!this.badgeElement || !window.cartManager) return;
 
@@ -55,13 +60,14 @@ class CartBadge {
         }
     }
 
+    // Configurer les écouteurs pour les modifications du panier
     setupCartListener() {
         window.addEventListener('storage', (e) => {
             if (e.key === 'bearshield_cart') {
                 this.updateDisplay();
             }
         });
-
+        // Surveiller les modifications directes via les méthodes du cartManager
         const originalAddProduct = window.cartManager.addProduct.bind(window.cartManager);
         const originalRemoveProduct = window.cartManager.removeProduct.bind(window.cartManager);
         const originalClearCart = window.cartManager.clearCart.bind(window.cartManager);

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const interior = svg.querySelector('.interior');
     const corners = ['top-left', 'top-right', 'bottom-left', 'bottom-right'].map(id => svg.querySelector(`.${id}`));
     const buttons = ['btn-1', 'btn-2', 'btn-3'].map(id => svg.querySelector(`.${id}`));
-
+    
     function updateColor(color) {
         const isGlossy = document.querySelector('input[name="finish"]').checked;
         let fillValue, strokeValue;
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             strokeValue = darkenColor(color, 0.2);
         }
 
-        // Appliquer le fill et stroke (jamais de flou sur le stroke)
+        // Appliquer le fill et stroke
         base.setAttribute('fill', fillValue);
         base.setAttribute('stroke', strokeValue);
         interior.setAttribute('fill', fillValue);
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             base.removeAttribute('filter');
             interior.removeAttribute('filter');
         } else {
-            // Blur léger uniquement sur le fill (jamais sur le stroke)
+            // Blur léger uniquement sur le fill pour le matte
             const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
             filter.setAttribute('id', 'matte-blur');
             const feGaussian = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
@@ -96,14 +96,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Afficher ou cacher les coins renforcés
     function toggleCorners(show) {
         corners.forEach(c => c.setAttribute('visibility', show ? 'visible' : 'hidden'));
     }
 
+    // Afficher ou cacher les boutons renforcés
     function toggleButtons(show) {
         buttons.forEach(b => b.setAttribute('visibility', show ? 'visible' : 'hidden'));
     }
 
+    // Assombrir une couleur hex
     function darkenColor(hex, percent) {
         // Convert hex to RGB
         let r = parseInt(hex.slice(1, 3), 16);
@@ -119,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return "#" + [r, g, b].map(x => x.toString(16).padStart(2, '0')).join('');
     }
 
+    // Appliquer le finish (glossy/matte)
     function setFinish() {
         const colorRadio = document.querySelector('input[name="color"]:checked');
         if (colorRadio) {
@@ -126,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Récupérer les données de personnalisation du formulaire
     function getCustomizationData() {
         const form = document.querySelector('.customization-form');
         const formData = new FormData(form);
@@ -187,12 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showMessage('Produit ajouté au panier !', 'success');
 
     };
-
-    document.querySelector('.add-to-cart-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        addToCart();
-    });
-
     function showMessage(message, type = 'error') {
         const existingMessage = document.querySelector('.form-message-fixed');
         if (existingMessage) {
@@ -220,8 +219,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000);
     }
 
-    // Connecter avec le formulaire existant
+    // Ajouter un produit au panier → listener sur le bouton
+    document.querySelector('.add-to-cart-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        addToCart();
+    });
 
+    // Connecter avec le formulaire existant
     document.querySelectorAll('input[name="color"]').forEach(input => {
         input.addEventListener('change', e => updateColor(e.target.value));
     });
@@ -239,6 +243,4 @@ document.addEventListener('DOMContentLoaded', () => {
     updateColor('transparent');
     toggleCorners(true);
     toggleButtons(true);
-
-
 });

@@ -1,3 +1,4 @@
+// Fonction pour créer une carte accessoire
 function createAccessoryCard(product) {
     return `
         <div class="card">
@@ -15,11 +16,13 @@ function createAccessoryCard(product) {
     `;
 }
 
+// Fonction pour charger les accessoires et les afficher
 function loadAccessories(search = "") {
     fetch('../data/products.json')
         .then(res => res.json())
         .then(products => {
             let grips = products.filter(product => product.type === 'grip');
+            // Filtrer les produits si une recherche est effectuée
             if (search !== "") {
                 grips = grips.filter(product =>
                     product.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -27,7 +30,7 @@ function loadAccessories(search = "") {
                 );
             }
             const container = document.querySelector('#accessories-container');
-
+            // Afficher les produits
             if (container) {
                 if (grips.length === 0 && search !== "") {
                     container.innerHTML = `
@@ -55,6 +58,7 @@ function loadAccessories(search = "") {
         });
 }
 
+// Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     loadAccessories();
 

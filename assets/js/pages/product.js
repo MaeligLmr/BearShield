@@ -1,7 +1,9 @@
+// Récupérer l'ID du produit depuis l'URL
 function getProductId() {
     return parseInt(new URLSearchParams(window.location.search).get('id'), 10);
 }
 
+// Récupérer les données de personnalisation du formulaire
 function getCustomizationData() {
     const formData = new FormData(document.querySelector('#customization-form'));
     return {
@@ -10,12 +12,15 @@ function getCustomizationData() {
     };
 }
 
+// Afficher un message temporaire
 function showMessage(message, type = 'error') {
+    // Supprimer le message existant s'il y en a un
     const existingMessage = document.querySelector('.form-message');
     if (existingMessage) {
         existingMessage.remove();
     }
 
+    // Créer et insérer le nouveau message
     const messageDiv = document.createElement('div');
     messageDiv.className = `form-message form-message-${type} form-message-fixed`;
     messageDiv.textContent = message;
@@ -28,10 +33,10 @@ function showMessage(message, type = 'error') {
     messageDiv.style.textAlign = 'center';
     messageDiv.style.background = type === 'error' ? '#ffdddd' : '#ddffdd';
     messageDiv.style.color = '#222';
-
     const addToCartBtn = document.querySelector('#add-to-cart-btn');
     addToCartBtn.parentNode.insertBefore(messageDiv, addToCartBtn);
 
+    // Supprimer le message après 3 secondes
     setTimeout(() => {
         messageDiv.remove();
     }, 3000);
@@ -46,20 +51,24 @@ function addToCart(product) {
             return;
         }
     }
-    const cartItem = window.cartManager.addProduct(product, customization);
+    //ajouter le produit au panier
+    window.cartManager.addProduct(product, customization);
     const existingMessage = document.querySelector('.form-message');
     if (existingMessage) {
         existingMessage.remove();
     }
+    // Afficher un message de succès
     showMessage('Produit ajouté au panier !', 'success');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Par défaut, sélectionner la couleur transparente
     const transparentColorOption = document.querySelector('input[name="color"][value="transparent"]');
     if (transparentColorOption) {
         transparentColorOption.checked = true;
     }
 
+    // Charger les données du produit
     fetch('../data/products.json')
         .then(res => res.json())
         .then(products => {
