@@ -118,7 +118,7 @@ i:hover {
     color: var(--primary-color);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 978px) {
     .panier-container {
         grid-template-columns: 2fr 1fr;
         gap: 3rem;
