@@ -760,6 +760,10 @@ nav .menu-list {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
+
+    .link-cart {
+        display: none;
+    }
 }
 
 .mb-2 {
@@ -814,8 +818,4 @@ nav .menu-list {
 .toggle-label {
     font-size: 0.8rem;
     min-width: 60px;
-}
-
-.link-cart {
-    display: none;
 }
