@@ -78,7 +78,7 @@ a {
 
 .bg-primary {
     background-color: var(--primary-color);
-    color: #000;
+    color: var(--primary-color-d2);
 }
 
 .bg-secondary {

@@ -166,3 +166,20 @@
         height: 50vh;
     }
 }
+
+@media (max-width: 978px) {
+    .menu-list {
+        gap: 1rem;
+    }
+
+    .menu-list li {
+        width: 80%;
+        justify-content: center;
+    }
+
+    .menu-list li:nth-child(1),
+    .menu-list li:nth-child(2) {
+        border-radius: 15px;
+        border: 2px solid var(--primary-color);
+    }
+}
