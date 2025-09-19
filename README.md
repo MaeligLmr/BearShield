@@ -104,6 +104,13 @@ BearShield/
 │   │   └── components/
 │   │       ├── routerAccessoires.js # Logique accessoires
 │   │       └── routerProduct.js     # Logique produits
+│   │       └── components.js        # Loader de composants
+│   │       └── cart-badge.js        # Logique du badge panier
+│   │       └── cart-manager.js      # Logique de l'ajout au panier
+│   │   └── pages/
+│   │       ├── cart.js              # Logique panier
+│   │       └── personnalization.js  # Logique personnalisation
+│   │       └── product.js           # Logique page produit
 │   └── img/                 # Images et assets
 ├── components/              # Composants réutilisables
 │   ├── header.html         # Header commun
