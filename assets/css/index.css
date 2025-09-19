@@ -16,7 +16,7 @@
 
 .acc-header {
     background: url("../img/acc-header-main.png") center bottom / 75% no-repeat;
-    height: 130vh;
+    height: 100%;
     padding-top: 10rem;
     align-items: flex-start;
     background-color: var(--primary-color-d1);
