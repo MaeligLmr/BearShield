@@ -1,15 +1,19 @@
 # BearShield
 
-## 📱 À propos
+## À propos
 
 **BearShield** est un site e-commerce moderne dédié à la vente de coques et accessoires 
 
 ### Concept
 - **Protection durable** : Coques et accessoires de qualité
-- **Éco-responsable** : Matériaux respectueux de l'environnement
 - **Personnalisation** : Créez votre coque unique
 - **Design moderne** : Interface utilisateur intuitive et responsive
+- Des coques abordables et au design sobre, compatibles avec des accessoires vendus séparément pour plus de personnalisation.
+- Un large choix de modèles adaptés à chaque type de téléphone, avec une mise en avant des gammes d’entrée de prix.
 
+### Cible
+Notre cible sont les jeunes / les étudiants de 15 à 26 ans
+ 
 ## Fonctionnalités Principales
 
 ### **Page d'Accueil**
@@ -21,8 +25,8 @@
 
 ### **Catalogue Produits**
 - **Deux sections distinctes** :
-  - 📱 **Nos Coques** (`cases.html`) - Collection complète de coques
-  - 🔗 **Nos Accessoires** (`accessories.html`) - Grips et autres accessoires
+  -  **Nos Coques** (`cases.html`) - Collection complète de coques
+  -  **Nos Accessoires** (`accessories.html`) - Grips et autres accessoires
 - **Système de recherche avancé** :
   - Recherche par nom et description
   -  Support de la touche Entrée
@@ -33,23 +37,23 @@
 
 ### **Personnalisation de Coque** 
 - **Interface de création avancée** :
-  -  **Toggles personnalisés** avec texte intégré (4rem × 100%) ← à faire fonctionner js
-  -  **Sélecteur de couleur** avec cercles colorés visuels ← à faire fonctionner js
+  -  **Toggles personnalisés** avec texte intégré (4rem × 100%)
+  -  **Sélecteur de couleur** avec cercles colorés visuels
   -  **Sélection de téléphone** avec dropdown stylisé Font Awesome
   -  **Multi-sélection d'accessoires**
 - **Interface responsive** : Layout mobile/desktop adaptatif
 - **Barre de prix** fixe en bas de page avec total dynamique
 - **Transitions fluides** et effets hover sur tous les éléments
 
-### 🛒 **Panier d'Achat**
+### **Panier d'Achat**
 - **Interface moderne** avec grille responsive (2fr 1fr desktop)
 - **Gestion des articles** :
-  -  Suppression d'articles ← à faire fonctionner js + cookie
-  -  Calcul automatique des totaux ← à faire fonctionner js
+  -  Suppression d'articles
+  -  Calcul automatique des totaux
 - **Panneau résumé** détails de commande
 - **Bouton validation**
 
-### 🧩 **Système de Composants**
+### **Système de Composants**
 - **Header réutilisable** :
   -  Menu hamburger responsive
   -  Navigation cohérente
@@ -75,9 +79,6 @@
 - **Corps** : Montserrat (400-600 weight)
 - **Hiérarchie** claire avec tailles adaptives
 
-### 📐 **Layout & Responsive**
-- **Mobile First** : Approche responsive prioritaire
-- **Breakpoints** : 768px et 978px
 
 ## 🛠️ Architecture Technique
 
@@ -85,22 +86,21 @@
 ```
 BearShield/
 ├── pages/                    # Pages HTML
-│   ├── index.html           # Page d'accueil
-│   ├── cases.html           # Catalogue coques (à intégrer)
-│   ├── accessories.html     # Catalogue accessoires
+│   ├── index.html            # Page d'accueil
+│   ├── cases.html            # Catalogue coques (à intégrer)
+│   ├── accessories.html      # Catalogue accessoires
 │   ├── personnalisation.html # Personnalisation
-│   ├── cart.html            # Panier
-│   └── product.html         # Détail produit
+│   ├── cart.html             # Panier
+│   └── product.html          # Détail produit
 ├── assets/
-│   ├── css/                 # Styles
-│   │   ├── style.css        # Styles globaux + utility classes
-│   │   ├── components.css   # Styles des composants
+│   ├── css/                     # Styles
+│   │   ├── style.css            # Styles globaux + utility classes
+│   │   ├── components.css       # Styles des composants
 │   │   ├── personnalization.css # Styles personnalisation
-│   │   ├── cart.css         # Styles panier
-│   │   ├── lists.css        # Grilles de produits
-│   │   └── index.css        # Styles accueil
+│   │   ├── cart.css             # Styles panier
+│   │   ├── lists.css            # Grilles de produits
+│   │   └── index.css            # Styles accueil
 │   ├── js/
-│   │   ├── components.js    # Loader de composants
 │   │   └── components/
 │   │       ├── routerAccessoires.js # Logique accessoires
 │   │       └── routerProduct.js     # Logique produits
@@ -111,13 +111,14 @@ BearShield/
 │   │       ├── cart.js              # Logique panier
 │   │       └── personnalization.js  # Logique personnalisation
 │   │       └── product.js           # Logique page produit
-│   └── img/                 # Images et assets
-├── components/              # Composants réutilisables
+│   └── img/                # Images et assets
+│   │   └── accessory/
+│   │   └── product/
+├── components/             # Composants réutilisables
 │   ├── header.html         # Header commun
 │   └── footer.html         # Footer commun
 ├── data/
-│   └── products.json       # Base de données produits
-└── GUIDE_COMPOSANTS.md     # Guide d'intégration
+    └── products.json       # Base de données produits
 ```
 
 ### **Technologies Utilisées**
@@ -130,7 +131,7 @@ BearShield/
 
 ### **Fonctionnalités JavaScript**
 - **Chargement dynamique** des produits depuis JSON
-- **Recherche en temps réel** avec filtrage intelligent
+- **Recherche**
 - **Composants modulaires** avec auto-chargement
 - **Gestion d'événements** optimisée
 - **Navigation SPA-like** entre pages produits
@@ -151,12 +152,13 @@ BearShield/
 - **Panier** : Intégré à la navigation
 
 
-## Améliorations
+## Améliorations possibles
 
-### **À Intégrer**
-- [ ] Page détail produit complète
-- [ ] Fonctionnalités panier JavaScript
-- [ ] Choix ds couleurs et accessoires dans la personnalisation
+- Sauvegarde de la personnalisation en cours
+- Configurations saisonnières : afficher sur la page d’accueil des designs thématiques (ex. Noël, été, Halloween).
+- Programme de reprise : possibilité de rendre son ancienne coque pour obtenir une réduction sur un nouvel achat.
+
+
 
 
 
